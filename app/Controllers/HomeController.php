@@ -41,4 +41,18 @@ class HomeController extends BaseController
         return $this->view()->display('tos.tpl');
     }
 
+    public function usage(){
+        return $this->view()->display('usage.tpl');
+    }
+
+    public function download(){
+        $filename = $_REQUEST['filename'];
+        echo $filename;
+        $filepath = "/home/ss/ss-panel-3.3.9/resources/download/".$filename;
+        header("Content-Type:application/zip");
+        header('Content-Disposition:attachment;filename='.$filename);
+        header('Content-Transfer-Encodeing: binary');
+        readfile($filepath);
+        
+    }
 }

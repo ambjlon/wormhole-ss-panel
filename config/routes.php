@@ -44,7 +44,8 @@ $app->get('/', 'App\Controllers\HomeController:index');
 $app->get('/code', 'App\Controllers\HomeController:code');
 $app->get('/tos', 'App\Controllers\HomeController:tos');
 $app->get('/debug', 'App\Controllers\HomeController:debug');
-
+$app->get('/usage', 'App\Controllers\HomeController:usage');
+$app->get('/download', 'App\Controllers\HomeController:download');
 // User Center
 $app->group('/user', function () {
     $this->get('', 'App\Controllers\UserController:index');
