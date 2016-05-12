@@ -44,14 +44,16 @@ class HomeController extends BaseController
     public function usage(){
         return $this->view()->display('usage.tpl');
     }
-
+    //这个函数本来是提供文件下载服务的, 但是在safarai浏览器上下载的东西总是带有.html后缀, 估计是nginx把下面的http设置重写了.
+    //所以直接使用nginx提供文件下载服务.
     public function download(){
         $filename = $_REQUEST['filename'];
-        echo $filename;
-        $filepath = "/home/ss/ss-panel-3.3.9/resources/download/".$filename;
-        header("Content-Type:application/zip");
+        //echo $filename;
+        $filepath = BASE_PATH."/resources/download/".$filename;
+        header("Content-Type:application");
         header('Content-Disposition:attachment;filename='.$filename);
-        header('Content-Transfer-Encodeing: binary');
+        header("Content-Length: ". filesize($filepath));
+        //header('Content-Transfer-Encodeing: binary');
         readfile($filepath);
         
     }
