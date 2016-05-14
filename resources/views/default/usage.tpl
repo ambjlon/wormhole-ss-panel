@@ -32,12 +32,14 @@
 <h3>详细教程</h3>
 <p><strong>Windows客户端设置</strong></p>
 <p class="text-danger">注：如果你的系统安装了360或同类的国产“安全”软件，可能会导致客户端无法正常运行，请先将其关闭或卸载。</p>
-<p>1.将下载下来的压缩文件解压缩到某文件夹下，运行解压缩出来的Shadowsocks.exe。此程序无需安装, 以后每次使用直接点击这个解压出来的.exe程序即可. 点击该程序后会在程序所在的同级目录生成一个json配置文件. 如下图:</p>
-<img src="/myimages/5.jpg"/>
+<p>1. 将下载下来的压缩文件解压缩到某文件夹下，运行解压缩出来的Shadowsocks.exe。此程序无需安装, 以后每次使用直接点击这个解压出来的.exe程序即可. 点击该程序后会在程序所在的同级目录生成一个json配置文件. 如下图:</p>
+<img src="/myimages/5.jpg" height="130" width="200"/>
 <p>如果无法运行，可能是缺少相关组件，需要安装<a href="http://download.microsoft.com/download/5/9/e/59e74271-2b59-49a1-b955-96b69cc34f38/vcredist_x86.exe">Microsoft Visual C++ 2008 SP1运行库</a>和<a href="https://www.microsoft.com/zh-cn/download/details.aspx?id=17718" target="_blank">.NET Framework 4.0</a></p>
-<p>2(1) 通过扫描二维码完成配置. </p>
+<p>2-1. 通过扫描二维码完成配置. </p>
 <p>首先登录本站进入<a href="/user/node">用户中心</a>, 点击左侧列表的机器列表, 随机选择一台机器点击进入配置详情, 请将配置二维码暴露在屏幕上.</p>
-<p>如果在第一步</p>
+<p>在第一步已经运行了客户端Shadowsocks.exe.这是你应该能在桌面右下角的小图标中找到一个纸飞机的图标, 这就是运行中的客户端. 然后右击它, 选择服务器->扫描屏幕上的二维码. 如下图:</p>
+<img src="/myimages/2.jpg" height="180" width="260"/>
+<p>客户端会自动识别屏幕上的二维码, 然后会提示你确定添加服务器. 这样就完成了配置.<>
 </div>
 
 </body>
