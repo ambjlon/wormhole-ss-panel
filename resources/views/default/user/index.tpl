@@ -6,7 +6,6 @@
     <section class="content-header">
         <h1>
             用户中心
-            <small>User Center</small>
         </h1>
     </section>
 
