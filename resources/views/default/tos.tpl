@@ -3,7 +3,7 @@
 <div class="section no-pad-bot" id="index-banner">
 <div class="container">
     <div class="page-header">
-        <h1>用户协议 Terms of Service </h1>
+        <h1>用户协议 </h1>
     </div>
     <p>{$config["appName"]}，以下简称本站。</p>
     <h3>隐私</h3>
@@ -24,15 +24,6 @@
             <li>任何违法使用条款的用户，我们将会删除违规账户并没收使用本站服务的权利。</li>
        </ul>
     </p>
-
-    <h3>其它</h3>
-    <p>
-    <ul>
-        <li>本站仅限人类及猫注册使用。</li>
-        <li>TOS更新时用户需要遵守最新TOS。</li>
-    </ul>
-    </p>
-
 </div>
 </div>
 {include file='footer.tpl'}

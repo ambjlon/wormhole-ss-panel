@@ -4,7 +4,8 @@
         <br><br>
         <h1 class="header center orange-text">{$config["appName"]}</h1>
         <div class="row center">
-            <h5 class="header col s12 light">轻松科学上网   保护个人隐私</h5>
+            <h5 class="header col s12 light">倡导科学上网   促进信息对等</h5>
+            <h6><font color="#FF0000">严禁使用本站提供的服务浏览涉及反动和色情的互联网内容!!! 一经发现禁掉账号!!</font></h3>
             {$homeIndexMsg}
         </div>
         {if $user->isLogin}
@@ -53,7 +54,7 @@
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-                    <h5 class="center"><!--Easy to work with-->使用简单</h5>
+                    <h5 class="center"><!--Easy to work with-->多平台</h5>
 
                     <p class="light">
                        支持多平台使用, 包括Windows, Android, Mac, iOS等系统.
