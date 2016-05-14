@@ -159,7 +159,7 @@
 		<div class="row">
 			<div class="col l6 s12">
 				<h5 class="white-text">声明</h5>
-				<p class="grey-text text-lighten-4">本站提供用于科学上网的账号, 帮助大家获取最新的科学技术信息.</p>
+				<p class="grey-text text-lighten-4">本站帮助大家获取最新的科学技术信息.</p>
                 <p class="grey-text text-lighten-4">切勿使用本利器浏览一些反政府的互联网内容.</p>
 			</div>
 			<div class="col l3 s12">
@@ -178,7 +178,7 @@
 				<h5 class="white-text">页面</h5>
 				<ul>
 					<li><a class="white-text" href="/code">邀请码</a></li>
-					<li><a class="white-text" href="/tos">TOS</a></li>
+					<li><a class="white-text" href="/tos">服务条款</a></li>
 				</ul>
 			</div>
 		</div>
