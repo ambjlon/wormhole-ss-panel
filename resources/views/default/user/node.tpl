@@ -71,8 +71,8 @@
                                         <li><a href="./node/{$node->id}">产生流量 <span
                                                         class="pull-right badge bg-green">{$node->getTrafficFromLogs()}</span></a>
                                         </li>
-                                        <li><a href="./node/{$node->id}">Uptime: <span
-                                                        class="pull-right badge bg-green">{$node->getNodeUptime()}</span></a>
+                                        <li><a href="./node/{$node->id}"><!--Uptime-->配置详情 <!--span   
+                                                        class="pull-right badge bg-green">{$node->getNodeUptime()}</span--></a>
                                         </li>
                                     </ul>
                                 </div>
