@@ -6,7 +6,7 @@
     </div>
 
     <div class="register-box-body">
-        <p class="login-box-msg">注册，然后变成一只猫。</p>
+        <!--p class="login-box-msg">注册，然后变成一只猫。</p-->
 
         <div class="form-group has-feedback">
             <input type="text" id="name" class="form-control" placeholder="昵称"/>
