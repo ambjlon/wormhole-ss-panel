@@ -18,7 +18,7 @@
                     <div class="box-header">
                         <i class="fa fa-bullhorn"></i>
 
-                        <h3 class="box-title">公告&FAQ</h3>
+                        <h3 class="box-title">公告</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

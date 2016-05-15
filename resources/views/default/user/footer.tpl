@@ -2,9 +2,9 @@
     <div align="center">
         {$userFooter}
     </div>
-    <div class="pull-right hidden-xs">
+    <!--div class="pull-right hidden-xs">
         Made with Love
-    </div>
+    </div-->
     <strong>Copyright &copy; 2016 <a href="#">{$config['appName']}</a> </strong>
     All rights reserved. Powered by PHP5&Slim| <a href="/tos">服务条款 </a>
 </footer>

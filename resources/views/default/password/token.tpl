@@ -32,7 +32,7 @@
             <p id="msg-error-p"></p>
         </div>
         <a href="/auth/login">登陆</a><br>
-        <a href="/auth/register" class="text-center">注册个帐号</a>
+        <a href="/auth/register" class="text-center">注册帐号</a>
 
     </div><!-- /.login-box-body -->
 </div><!-- /.login-box -->

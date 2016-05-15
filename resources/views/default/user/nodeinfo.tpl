@@ -15,7 +15,7 @@
                 <div class="callout callout-warning">
                     <h4>注意!</h4>
 
-                    <p>配置文件以及二维码请勿泄露！</p>
+                    <p><font color="#FF0000">配置文件以及二维码请勿泄露！由此造成的流量损失本站概不负责!</font></p>
                 </div>
             </div>
             <div class="col-md-6">

@@ -17,8 +17,8 @@
             <div class="col-md-12">
                 <div class="callout callout-warning">
                     <h4>注意!</h4>
-                    <p>请勿在任何地方公开节点地址！</p>
-                    <p>流量比例为0.5即使用1000MB按照500MB流量记录记录结算.</p>
+                    <p><font color="#FF0000">请勿在任何地方公开节点地址！由此造成的流量损失本站概不负责!</font></p>
+                    <p>流量比例的意思: 流量比例为0.5即使用1000MB按照500MB流量来记录.</p>
                     {$msg}
                 </div>
             </div>
