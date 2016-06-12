@@ -63,7 +63,7 @@ CREATE TABLE `ss_node_info_log` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+-- 词表暂时不用 使用下面的表
 DROP TABLE IF EXISTS `ss_node_online_log`;
 CREATE TABLE `ss_node_online_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -76,9 +76,21 @@ CREATE TABLE `ss_node_online_log` (
 DROP TABLE IF EXISTS `ss_node_online_log_noid`;
 CREATE TABLE `ss_node_online_log_noid` ( 
   `node_id` int(11) NOT NULL,
+  `server` varchar(128) NOT NULL,
   `online_user` int(11) NOT NULL,
-  `log_time` int(11) NOT NULL,
+  `log_time` timestamp(14) NOT NULL DEFAULT NOW(),
   PRIMARY KEY (`node_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- 记录(port,node)对儿在线状态. 10000个port*50台机器 = 500000条记录
+-- 一个用户也许可也持有多个port的. 所以这里记录只是(node,port)对儿为键值
+DROP TABLE IF EXISTS `ss_user_node_online_log_noid`;
+CREATE TABLE `ss_user_node_online_log_noid` (
+  `port` int(11) NOT NULL,  
+  `node_id` int(11) NOT NULL,
+  `server` varchar(128) NOT NULL,
+  `online_status` tinyint(1) NOT NULL,
+  `log_time` timestamp(14) NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (`port`,`node_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `ss_password_reset`;
