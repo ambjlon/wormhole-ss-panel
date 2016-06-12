@@ -72,7 +72,7 @@ CREATE TABLE `ss_node_online_log` (
   `log_time` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+-- 因为ss-manyuser写这个表的时候需要'存在更新,不存在插入', 所以用node_id做键值. @chenjianglong
 DROP TABLE IF EXISTS `ss_node_online_log_noid`;
 CREATE TABLE `ss_node_online_log_noid` ( 
   `node_id` int(11) NOT NULL,
