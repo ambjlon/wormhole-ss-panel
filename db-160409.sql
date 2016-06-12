@@ -73,6 +73,13 @@ CREATE TABLE `ss_node_online_log` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `ss_node_online_log_noid`;
+CREATE TABLE `ss_node_online_log_noid` ( 
+  `node_id` int(11) NOT NULL,
+  `online_user` int(11) NOT NULL,
+  `log_time` int(11) NOT NULL,
+  PRIMARY KEY (`node_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `ss_password_reset`;
 CREATE TABLE `ss_password_reset` (
