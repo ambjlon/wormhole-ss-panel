@@ -156,6 +156,6 @@ CREATE TABLE `user_traffic_log` (
   `node_id` int(11) NOT NULL,
   `rate` float NOT NULL,
   `traffic` varchar(32) NOT NULL,
-  `log_time` int(11) NOT NULL,
+  `log_time` timestamp(14) NOT NULL DEFAULT NOW(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
