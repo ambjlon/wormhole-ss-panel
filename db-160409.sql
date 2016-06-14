@@ -151,11 +151,21 @@ DROP TABLE IF EXISTS `user_traffic_log`;
 CREATE TABLE `user_traffic_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `u` int(11) NOT NULL,
-  `d` int(11) NOT NULL,
+  `u` bigint(20) NOT NULL,
+  `d` bigint(20) NOT NULL,
   `node_id` int(11) NOT NULL,
   `rate` float NOT NULL,
   `traffic` varchar(32) NOT NULL,
   `log_time` timestamp(14) NOT NULL DEFAULT NOW(),
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+-- node_load 记载node的累积流量
+DROP TABLE IF EXISTS `node_load`;
+CREATE TABLE `node_load` (
+  `node_id` int(11) NOT NULL,
+  `server` varchar(128) NOT NULL,
+  `load` bigint(20) NOT NULL,
+  `log_time` timestamp(14) NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (`node_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
