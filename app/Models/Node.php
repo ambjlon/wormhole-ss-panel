@@ -78,5 +78,12 @@ class Node extends Model
         }
         return Tools::flowAutoShow($traffic);
     }
-
+    function getNodeTrafficLoad(){
+        $id = $this->attributes['id'];
+        $log = NodeTrafficLoad::where('node_id', $id)->first();
+        if($log == null) {
+            return "暂无数据";
+        }
+        return Tools::flowAutoShow($log->load);
+    }
 }
