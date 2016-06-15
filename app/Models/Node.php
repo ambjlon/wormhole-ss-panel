@@ -53,7 +53,7 @@ class Node extends Model
     }
     public function getLastNodeOnlineLogNoid(){
         $id = $this->attributes['id'];
-        $log = NodeOnlineLogNoid::where('node_id', $id);
+        $log = NodeOnlineLogNoid::where('node_id', $id)->first();
         if ($log == null) {
             return null;
         }
