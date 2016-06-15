@@ -217,7 +217,7 @@ class UserController extends BaseController
         if (isset($request->getQueryParams()["page"])) {
             $pageNum = $request->getQueryParams()["page"];
         }
-        $traffic = TrafficLog::where('user_id', $this->user->id)->orderBy('id', 'desc')->paginate(3, ['*'], 'page', $pageNum);
+        $traffic = TrafficLog::where('user_id', $this->user->id)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
         $traffic->setPath('/user/trafficlog');
         return $this->view()->assign('logs', $traffic)->display('user/trafficlog.tpl');
     }

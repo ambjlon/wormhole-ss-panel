@@ -40,7 +40,8 @@
                                     <td>{$log->node()->name}</td>
                                     <td>{$log->rate}</td>
                                     <td>{$log->totalUsed()}</td>
-                                    <td>{$log->traffic}</td>
+                                    <!--td>{$log->traffic}</td-->
+                                    <td>{$log->totalUsed()}</td>
                                     <td>{$log->logTime()}</td>
                                 </tr>
                             {/foreach}
