@@ -5,7 +5,7 @@
         <h1 class="header center orange-text">{$config["appName"]}</h1>
         <div class="row center">
             <h5 class="header col s12 light">倡导科学上网   促进信息对等</h5>
-            <h6><font color="#FF0000">严禁使用本站提供的服务浏览涉及反动和色情的互联网内容!!! 一经发现禁掉账号!!</font></h3>
+            <h6><font color="#FF0000">严禁使用本站提供的服务浏览涉及反动和色情的互联网内容!!!</font></h3>
             {$homeIndexMsg}
         </div>
         {if $user->isLogin}
