@@ -16,11 +16,11 @@ class TrafficLog extends Model
 
     public function totalUsed()
     {
-        return Tools::flowAutoShow($this->attributes['u'] + $this->attributes['d']);
+        return Tools::flowAutoShow($this->attributes['d']);
     }
 
     public function logTime()
     {
-        return Tools::toDateTime($this->attributes['log_time']);
+        return $this->attributes['log_time'];
     }
 }
