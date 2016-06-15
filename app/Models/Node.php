@@ -51,10 +51,18 @@ class Node extends Model
         }
         return $log;
     }
+    public function getLastNodeOnlineLogNoid(){
+        $id = $this->attributes['id'];
+        $log = NodeOnlineLogNoid::where('node_id', $id);
+        if ($log == null) {
+            return null;
+        }
+        return $log;
+    }
 
     function getOnlineUserCount()
     {
-        $log = $this->getLastNodeOnlineLog();
+        $log = $this->getLastNodeOnlineLogNoid();
         if ($log == null) {
             return "暂无数据";
         }
