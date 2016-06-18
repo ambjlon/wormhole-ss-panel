@@ -1,47 +1,42 @@
-<footer class="page-footer orange">
-	<div class="container">
-		<div class="row">
-			<div class="col l6 s12">
-				<h5 class="white-text">声明</h5>
-				<p class="grey-text text-lighten-4">本站帮助大家获取最新的科学技术信息.</p>
-                <p class="grey-text text-lighten-4">切勿使用本利器浏览任何反政府的互联网内容.</p>
-			</div>
-			<div class="col l3 s12">
-				<h5 class="white-text">用户</h5>
-				<ul>
-				{if $user->isLogin}
-					<li><a class="white-text" href="/user">用户中心</a></li>
-					<li><a class="white-text" href="/user/logout">退出</a></li>
-				{else}
-					<li><a class="white-text" href="/auth/login">登录</a></li>
-					<li><a class="white-text" href="/auth/register">注册</a></li>
-				{/if}
-				</ul>
-			</div>
-			<div class="col l3 s12">
-				<h5 class="white-text">页面</h5>
-				<ul>
-					<li><a class="white-text" href="/code">邀请码</a></li>
-					<li><a class="white-text" href="/tos">服务条款</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="footer-copyright">
-		<div class="container">
-			&copy; {$config["appName"]}  Powered by PHP5&Slim
-		</div>
-		<div style="display:none;">
-			{$analyticsCode}
-		</div>
-	</div>
-</footer>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+  document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F772c3292678ebb30574924a338901843' type='text/javascript'%3E%3C/script%3E"));
+</script>
 
 
-<!--  Scripts-->
-<script src="/assets/public/js/jquery.min.js"></script>
-<script src="/assets/materialize/js/materialize.min.js"></script>
-<script src="/assets/materialize/js/init.js"></script>
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">声明</h5>
+        <p class="grey-text text-lighten-4">本站帮助大家获取最新的科学技术信息.</p>
+        <p class="grey-text text-lighten-4">切勿使用本利器浏览任何反政府的互联网内容.</p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">用户</h5>
+        <ul>
+          <li><a class="white-text" href="/user">用户中心</a></li>
+          <li><a class="white-text" href="/user/logout">退出</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">页面</h5>
+        <ul>
+          <li><a class="white-text" href="/code">邀请码</a></li>
+          <li><a class="white-text" href="/tos">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      &copy; Wormhole  Powered by PHP5&Slim
+    </div>
+    <div style="display:none;">
+
+    </div>
+  </div>
 
 </body>
 </html>
