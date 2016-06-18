@@ -25,7 +25,6 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">首页</a></li>
             <li><a href="/usage">使用教程</a></li>
-            <li><a href="/plan">套餐列表</a></li>
             <li><a href="/code">邀请码</a></li>
             <li><a href="/user">用户中心</a></li>
             <li><a href="/user/logout">退出</a></li>
