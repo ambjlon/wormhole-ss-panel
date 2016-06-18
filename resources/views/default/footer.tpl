@@ -1,10 +1,3 @@
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-  document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F772c3292678ebb30574924a338901843' type='text/javascript'%3E%3C/script%3E"));
-</script>
-
-
 <div class="container">
   <div class="container">
     <div class="row">
@@ -37,6 +30,11 @@
 
     </div>
   </div>
-
+</div>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+  document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F772c3292678ebb30574924a338901843' type='text/javascript'%3E%3C/script%3E"));
+</script>
 </body>
 </html>
