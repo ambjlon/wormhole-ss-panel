@@ -50,7 +50,7 @@ CREATE TABLE `ss_node` (
   `offset` int(11) NOT NULL DEFAULT '0',
   `sort` int(3) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `ss_node_info_log`;
