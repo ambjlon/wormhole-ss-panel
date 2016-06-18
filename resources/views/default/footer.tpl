@@ -1,19 +1,19 @@
 <div class="container">
   <div class="container">
     <div class="row">
-      <div class="col l6 s12">
+      <div class="col-md-6">
         <h5 class="white-text">声明</h5>
         <p class="grey-text text-lighten-4">本站帮助大家获取最新的科学技术信息.</p>
         <p class="grey-text text-lighten-4">切勿使用本利器浏览任何反政府的互联网内容.</p>
       </div>
-      <div class="col l3 s12">
+      <div class="col-md-3">
         <h5 class="white-text">用户</h5>
         <ul>
           <li><a class="white-text" href="/user">用户中心</a></li>
           <li><a class="white-text" href="/user/logout">退出</a></li>
         </ul>
       </div>
-      <div class="col l3 s12">
+      <div class="col-md-3">
         <h5 class="white-text">页面</h5>
         <ul>
           <li><a class="white-text" href="/code">邀请码</a></li>
@@ -25,9 +25,6 @@
   <div class="footer-copyright">
     <div class="container">
       &copy; Wormhole  Powered by PHP5&Slim
-    </div>
-    <div style="display:none;">
-
     </div>
   </div>
 </div>
