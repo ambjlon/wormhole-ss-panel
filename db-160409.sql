@@ -107,7 +107,7 @@ CREATE TABLE `ss_password_reset` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+  `user_name` varchar(128) CHARACTER SET utf8 NOT NULL,
   `email` varchar(32) NOT NULL,
   `pass` varchar(64) NOT NULL,
   `passwd` varchar(16) NOT NULL,
