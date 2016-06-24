@@ -2729,7 +2729,7 @@ a.btn.disabled,fieldset[disabled] a.btn {
 }
 .btn-success.focus,.btn-success:focus {
     color:#fff;
-    background-color:#449d44;
+    background-color:#ff9933;
     border-color:#255625
 }
 .btn-success:hover {
