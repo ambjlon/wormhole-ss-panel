@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Wormhole</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/assets/public/css/bootstrap.min.css.3.3.5" rel="stylesheet" />
+    <link href="/assets/public/css/bootstrap.min.3.3.5.css" rel="stylesheet" />
     <link href="/assets/public/css/font-awesome.min.css" rel="stylesheet" />
     <link href="/assets/public/css/website.css" rel="stylesheet" />
     <!--[if lt IE 9]><script src="/Public/js/html5.js"></script><![endif]-->
