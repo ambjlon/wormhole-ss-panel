@@ -3880,7 +3880,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
     color:#ccc
 }
 .navbar-inverse {
-    background-color:#222;
+    background-color:#0099CC;
     border-color:#080808
 }
 .navbar-inverse .navbar-brand {
@@ -3947,7 +3947,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
     background-color:transparent
 }
 }.navbar-inverse .navbar-link {
-    color:#9d9d9d
+    color:#FFFFFF
 }
 .navbar-inverse .navbar-link:hover {
     color:#fff
