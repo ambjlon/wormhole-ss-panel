@@ -3450,7 +3450,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
     margin-left:2px
 }
 .nav-pills>li.active>a,.nav-pills>li.active>a:focus,.nav-pills>li.active>a:hover {
-    color:#fff;
+    color:#3399CC;
     background-color:#337ab7
 }
 .nav-stacked>li {
