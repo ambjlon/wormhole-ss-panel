@@ -6,7 +6,7 @@
         <div class="hero-content">
           <h2>Wormhole</h2>
           <p>倡导科学上网   促进信息对等</p>
-          <p>严禁使用本站提供的服务浏览涉及反动和色情的互联网内容!!!</p>
+          <p><font color="#FF0000">严禁使用本站提供的服务浏览涉及反动和色情的互联网内容!!!</font></p>
           {if $user->isLogin}
           <p><a href="/user" class="btn btn-success btn-large">进入用户中心</a></p>
           {else}
