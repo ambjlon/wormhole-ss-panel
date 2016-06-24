@@ -19,11 +19,11 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-          <a class="navbar-brand" href="/"><i class="fa fa-mobile"></i> Wormhole</a>
+          <!--a class="navbar-brand" href="/"> Wormhole</a-->
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">首页</a></li>
+            <li ><a href="/">首页</a></li>
             <li><a href="/usage">使用教程</a></li>
             <li><a href="/code">邀请码</a></li>
             <li><a href="/user">用户中心</a></li>
