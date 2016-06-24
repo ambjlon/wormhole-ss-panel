@@ -10,7 +10,7 @@
           {if $user->isLogin}
           <p><a href="/user" class="btn btn-success btn-large">进入用户中心</a></p>
           {else}
-          <p><a href="/user/register" class="btn btn-success btn-large">立即注册</a></p>
+          <p><a href="/auth/register" class="btn btn-success btn-large">立即注册</a></p>
           {/if}
         </div>
       </div>
