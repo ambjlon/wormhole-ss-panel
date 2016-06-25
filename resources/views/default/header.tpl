@@ -16,28 +16,6 @@
     <style>
       .divcss5-b{ margin-left:13px}
     </style>
-    <style type="text/css">
-      {literal}
-      .demo{height:1300px; padding-top:100px}
-      .demo p{text-align:center; height:32px; line-height:32px; font-size:16px}
-      .demo p span{margin:20px}
-      .demo p a.cur{color:#f60; font-weight:bold}
-      a.backToTop{width:28px; height:24px; background:#eaeaea url(top.gif) no-repeat -21px 4px; text-indent:-999em}
-      a.backToTop:hover{background-position:-21px -19px}
-      {/literal}
-    </style>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/materialize/js/gotoTop.js"></script>
-    <script type="text/javascript">
-      {literal}
-      $(function(){
-      $(".backToTop").goToTop();
-      $(window).bind('scroll resize',function(){
-      $(".backToTop").goToTop();
-      });
-      });
-      {/literal}
-    </script>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
