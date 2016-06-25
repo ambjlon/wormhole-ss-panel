@@ -1,5 +1,5 @@
 {include file='header.tpl'}
-<div class="row">
+<div class="divcss5-b">
 <h3>目录</h3>
 <p><strong>说明</strong></p>
 <p>阅读使用教程之前请先看一下这个简单的说明, 好多配置过程有个整体上的把握.</p>
@@ -28,7 +28,7 @@
 
 <hr/>
 
-<div>
+<div class="divcss5-b">
 <h3>详细教程</h3>
 <p id="client-win"></p>
 <p><strong>Windows客户端设置</strong></p>
