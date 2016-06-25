@@ -26,8 +26,13 @@
             <li ><a href="/">首页</a></li>
             <li><a href="/usage">使用教程</a></li>
             <li><a href="/code">邀请码</a></li>
-            <li><a href="/user">用户中心</a></li>
-            <li><a href="/user/logout">退出</a></li>
+            {if $user->isLogin}
+                <li><a href="/user">用户中心</a></li>
+                <li><a href="/user/logout">退出</a></li>
+            {else}
+                <li><a href="/auth/login">登录</a></li>
+                <li><a href="/auth/register">注册</a></li>
+            {/if}
           </ul>
         </div>
       </div>
