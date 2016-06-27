@@ -20,7 +20,7 @@
 
 <div class="container">
   <div class="alert alert-success">
-    最新动态：wormhole开始免费提供服务了!!!
+    最新动态：wormhole开始免费提供服务了!!! qq交流群431706930
   </div>
 
   <div class="row">

@@ -6,7 +6,8 @@
       <div class="col-md-4">
         <h5 class="white-text">声明</h5>
         <p class="grey-text text-lighten-4">本站帮助大家获取最新的科学技术信息.</p>
-        <p class="grey-text text-lighten-4">切勿使用本利器浏览任何反政府的互联网内容.</p>
+        <p class="grey-text text-lighten-4">切勿使用本站提供的服务浏览任何反政府的互联网内容.</p>
+        <p class="grey-text text-lighten-4">qq交流群431706930 微信公众号:虫洞VPN</p>           
       </div>
       <div class="col-md-4">
         <h5 class="white-text">用户</h5>
