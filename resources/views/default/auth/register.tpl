@@ -95,7 +95,8 @@
 //jquery $(document).ready() 与window.onload的区别  http://www.jquerycn.cn/a_4779
     $(document).ready(function () {
         function register() {
-            $.ajax({//$.ajax()方法详解 http://www.cnblogs.com/tylerdonet/p/3520862.html
+        //$.ajax()方法详解 http://www.cnblogs.com/tylerdonet/p/3520862.html
+            $.ajax({
                 type: "POST",
                 url: "/auth/register",
                 dataType: "json",
