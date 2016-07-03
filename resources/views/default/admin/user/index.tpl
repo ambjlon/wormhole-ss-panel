@@ -21,6 +21,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>邮箱</th>
+                                <th>QQ</th>
                                 <th>端口</th>
                                 <th>状态</th>
                                 <th>加密方式</th>
@@ -35,6 +36,7 @@
                             <tr>
                                 <td>#{$user->id}</td>
                                 <td>{$user->email}</td>
+                                <td>{$user->qq}</td>
                                 <td>{$user->port}</td>
                                 <td>{$user->enable}</td>
                                 <td>{$user->method}</td>
