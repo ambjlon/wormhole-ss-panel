@@ -131,7 +131,8 @@
         }
         //整个页面的按键
         $("html").keydown(function (event) {
-            if (event.keyCode == 13) {//按下回车键的响应
+        //按下回车键的响应
+            if (event.keyCode == 13) {
                 register();
             }
         });
