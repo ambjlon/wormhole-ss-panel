@@ -43,6 +43,10 @@
             <input type="text" id="code" value="{$code}" class="form-control" placeholder="邀请码"/>
             <span class="glyphicon glyphicon-send form-control-feedback"></span>
         </div>
+        <div class="form-group has-feedback">
+            <input type="text" id="qq"  class="form-control" placeholder="请留下您的QQ"/>
+            <span class="glyphicon glyphicon-send form-control-feedback"></span>
+        </div>
 
         <div class="form-group has-feedback">
             <p>注册即代表同意<a href="/tos">服务条款</a></p>
@@ -75,6 +79,7 @@
 <!-- iCheck -->
 <script src="/assets/public/js/icheck.min.js" type="text/javascript"></script>
 <script>
+//$(function(){})和$(document).ready(function(){})的关系 http://holysonll.blog.163.com/blog/static/2141390932013411112823855/
     $(function () {
         $('input').iCheck({
             checkboxClass: 'icheckbox_square-blue',
@@ -87,9 +92,10 @@
     });
 </script>
 <script>
+//jquery $(document).ready() 与window.onload的区别  http://www.jquerycn.cn/a_4779
     $(document).ready(function () {
         function register() {
-            $.ajax({
+            $.ajax({//$.ajax()方法详解 http://www.cnblogs.com/tylerdonet/p/3520862.html
                 type: "POST",
                 url: "/auth/register",
                 dataType: "json",
@@ -100,7 +106,8 @@
                     repasswd: $("#repasswd").val(),
                     code: $("#code").val(),
                     verifycode: $("#verifycode").val(),
-                    agree: $("#agree").val()
+                    agree: $("#agree").val(),
+                    qq: $("#qq").val()
                 },
                 success: function (data) {
                     if (data.ret == 1) {
@@ -121,9 +128,9 @@
                 }
             });
         }
-
+        //整个页面的按键
         $("html").keydown(function (event) {
-            if (event.keyCode == 13) {
+            if (event.keyCode == 13) {//按下回车键的响应
                 register();
             }
         });

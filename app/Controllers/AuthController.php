@@ -73,7 +73,7 @@ class AuthController extends BaseController
         $repasswd = $request->getParam('repasswd');
         $code = $request->getParam('code');
         $verifycode = $request->getParam('verifycode');
-
+        $qq = $request->getParam('qq');
         // check code
         $c = InviteCode::where('code', $code)->first();
         if ($c == null) {
@@ -89,7 +89,7 @@ class AuthController extends BaseController
             return $this->echoJson($response, $res);
         }
         // check pwd length
-        if (strlen($passwd) < 8) {
+        if (strlen($passwd) < 6) {
             $res['ret'] = 0;
             $res['msg'] = "密码太短";
             return $this->echoJson($response, $res);
@@ -117,6 +117,13 @@ class AuthController extends BaseController
             return $this->echoJson($response, $res);
         }
 
+        //verify qq
+        if($qq === ''){
+            $res['ret'] = 0;
+            $res['msg'] = '请留下您的qq号码';
+            return $this->echoJson($response, $res);
+        }
+
         // do reg user
         $user = new User();
         $user->user_name = $name;
@@ -131,6 +138,7 @@ class AuthController extends BaseController
         $user->invite_num = Config::get('inviteNum');
         $user->reg_ip = Http::getClientIP();
         $user->ref_by = $c->user_id;
+        $user->qq = $qq;
 
         if ($user->save()) {
             $res['ret'] = 1;
