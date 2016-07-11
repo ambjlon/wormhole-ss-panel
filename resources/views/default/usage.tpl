@@ -21,7 +21,7 @@
   <ul>
     <li><a href="#client-win">设置Windows</a></li>
     <li><a href="#client-mac">设置Mac</a></li>
-    <!--a href="#client-linux" class="btn btn-success btn-sm"><i class="fa fa-linux"></i> Linux</a> &nbsp;-->
+    <li><a href="#client-linux">设置linux</a></li>  
     <li><a href="#client-android">设置Android</a></li>
   </ul>
 </div>
@@ -97,5 +97,18 @@
 <p>3. 连接服务器. 点击右上角的小图标. 如下图:</p>
 <img src="/myimages/android-2.png" height="460" width="260"/>
 <p>在弹出的对话框中选择信任应用程序, 之后会看到连接成功的提示.</p>
+
+
+
+<p id="client-linux"></p>
+<p><strong>Linux客户端设置</strong></p>
+<p>相信在linux下使用本服务的一定是技术工作者了, 所以这里的说明就略微专业一些. 而且这里提供的只是最通用的方法, 同时还给出了其他的一些建议, 大家可以研究一下.</p>
+<p>在linux下使用本服务需要两个步骤.首先要在本地启动shadowsocks的客户端服务, 然后还要把网络请求转到在本地启动的客户端服务</p>
+<p>1.本地shadowsocks客户端开启</p>
+<p>shadowsocks已经发布到python的包管理系统了. 我们通过pip安装shadowsocks, 所以首先要安装pip, 而pip通过easy_install来进行安装. </p>
+<p>>先安装easy_install. 下载easy_install, wget https://pypi.python.org/packages/source/s/setuptools/setuptools-17.0.zip --no-check-certificate</p>
+<p>解压setuptools-17.0.zip, 进入setuptools目录, 执行'python setup.py install'完成easy_install的安装.</p>
+<p>easy_install安装完成后, 执行easy_install pip完成pip的安装</p>
+<p>pip安装完成后执行pip install shadowsocks完成shadowsocks扩展的安装.</p>
 </div>
 {include file='footer.tpl'}
