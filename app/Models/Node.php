@@ -86,7 +86,8 @@ class Node extends Model
         }
         return Tools::flowAutoShow($log->load);
     }
-
+    //参考http://stackoverflow.com/questions/34907575/eloquent-model-method-or-attribute-for-calculation
+    //这里实现了一个"属性".
     public function getNodeloadAttribute(){
         $id = $this->attributes['id'];
         $log = NodeTrafficLoad::where('node_id', $id)->first();

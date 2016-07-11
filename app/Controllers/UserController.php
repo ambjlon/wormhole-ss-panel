@@ -36,19 +36,16 @@ class UserController extends BaseController
         }
         return $this->view()->assign('msg',$msg)->display('user/index.tpl');
     }
-    // private function sortNode($x, $y) {
-    //     if($x->getNodeTrafficLoad() > $y->getNodeTrafficLoad()){
-    //         return 1;
-    //     }else{
-    //         return -1;
-    //     }
-    // }
+
+    
     public function node($request, $response, $args)
     {
         $msg = DbConfig::get('user-node');
         $user = Auth::getUser();
+        //nodeload是通过在Node类中定义一个getNodeloadAttribute函数实现的"属性".
+        //nodeload只能用在sortBy后面
+        //参考http://laravel.io/forum/02-10-2014-orderby-with-my-custom-attributes
         $nodes = Node::where('type', 1)->orderBy('sort')->get()->sortBy('nodeload');
-        //usort($nodes, 'sortNode');
         return $this->view()->assign('nodes', $nodes)->assign('user', $user)->assign('msg',$msg)->display('user/node.tpl');
     }
 
