@@ -60,7 +60,7 @@ class Node extends Model
         return $log;
     }
 
-    function getOnlineUserCount()
+    public function getOnlineUserCount()
     {
         $log = $this->getLastNodeOnlineLogNoid();
         if ($log == null) {
@@ -69,7 +69,7 @@ class Node extends Model
         return $log->online_user;
     }
 
-    function getTrafficFromLogs()
+    public function getTrafficFromLogs()
     {
         $id = $this->attributes['id'];
         $traffic = TrafficLog::where('node_id', $id)->sum('u') + TrafficLog::where('node_id', $id)->sum('d');
@@ -78,7 +78,7 @@ class Node extends Model
         }
         return Tools::flowAutoShow($traffic);
     }
-    function getNodeTrafficLoad(){
+    public function getNodeTrafficLoad(){
         $id = $this->attributes['id'];
         $log = NodeTrafficLoad::where('node_id', $id)->first();
         if($log == null) {
@@ -86,4 +86,14 @@ class Node extends Model
         }
         return Tools::flowAutoShow($log->load);
     }
+
+    public function getNodeloadAttribute(){
+        $id = $this->attributes['id'];
+        $log = NodeTrafficLoad::where('node_id', $id)->first();
+        if($log == null) {
+            return 0;
+        }
+        return $log->load;
+    }
+    
 }

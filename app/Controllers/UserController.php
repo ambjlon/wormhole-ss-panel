@@ -36,19 +36,19 @@ class UserController extends BaseController
         }
         return $this->view()->assign('msg',$msg)->display('user/index.tpl');
     }
-    private function sortNode($x, $y) {
-        if($x->getNodeTrafficLoad() > $y->getNodeTrafficLoad()){
-            return 1;
-        }else{
-            return -1;
-        }
-    }
+    // private function sortNode($x, $y) {
+    //     if($x->getNodeTrafficLoad() > $y->getNodeTrafficLoad()){
+    //         return 1;
+    //     }else{
+    //         return -1;
+    //     }
+    // }
     public function node($request, $response, $args)
     {
         $msg = DbConfig::get('user-node');
         $user = Auth::getUser();
-        $nodes = Node::where('type', 1)->orderBy('sort')->get();
-        usort($nodes, 'sortNode');
+        $nodes = Node::where('type', 1)->orderBy('nodeload')->get();
+        //usort($nodes, 'sortNode');
         return $this->view()->assign('nodes', $nodes)->assign('user', $user)->assign('msg',$msg)->display('user/node.tpl');
     }
 
