@@ -55,13 +55,13 @@
   <img src="/myimages/10.jpg" height="180" width="260"/>
   <p>选择PAC代理模式</p>
   <img src="/myimages/11.jpg" height="180" width="260"/>
-  </p>然后开启PAC本地模式:</p>
-  <img src="/myimages/4.jpg" height="180" width="260"/>
-  <p>现在在地址栏输入google.com, 就能成功访问了.</p>
-  <p>如不能翻墙可以尝试重启浏览器. 重启浏览器后还是不能翻墙, 再尝试先选择全局模式:</p>
-  <img src="/myimages/12.jpg" height="180" width="260"/>
-  <p> 等确定可以翻墙后再切回PAC模式</p>
-  <p>备注:本地PAC(MAC下叫做自动代理)是指在对某个网址访问前先根据本地的某个配置文件决定这次访问是不是要走本代理, 在线PAC这个配置文件存储在远端某个位置. 和PAC模式对应是系统代理(MAC下叫做全局模式), 此时不管访问什么网址统统走本代理, 非常不建议使用此模式.</p>
+</p>然后开启PAC本地模式:</p>
+<img src="/myimages/4.jpg" height="180" width="260"/>
+<p>现在在地址栏输入google.com, 就能成功访问了.</p>
+<p>如不能翻墙可以尝试重启浏览器. 重启浏览器后还是不能翻墙, 再尝试先选择全局模式:</p>
+<img src="/myimages/12.jpg" height="180" width="260"/>
+<p> 等确定可以翻墙后再切回PAC模式</p>
+<p>备注:本地PAC(MAC下叫做自动代理)是指在对某个网址访问前先根据本地的某个配置文件决定这次访问是不是要走本代理, 在线PAC这个配置文件存储在远端某个位置. 和PAC模式对应是系统代理(MAC下叫做全局模式), 此时不管访问什么网址统统走本代理, 非常不建议使用此模式.</p>
 
 <p id="client-mac"></p>
 <p><strong>MAC客户端设置</strong></p>
@@ -102,13 +102,69 @@
 
 <p id="client-linux"></p>
 <p><strong>Linux客户端设置</strong></p>
-<p>相信在linux下使用本服务的一定是技术工作者了, 所以这里的说明就略微专业一些. 而且这里提供的只是最通用的方法, 同时还给出了其他的一些建议, 大家可以研究一下.</p>
-<p>在linux下使用本服务需要两个步骤.首先要在本地启动shadowsocks的客户端服务, 然后还要把网络请求转到在本地启动的客户端服务</p>
-<p>1.本地shadowsocks客户端开启</p>
-<p>shadowsocks已经发布到python的包管理系统了. 我们通过pip安装shadowsocks, 所以首先要安装pip, 而pip通过easy_install来进行安装. </p>
-<p>>先安装easy_install. 下载easy_install, wget https://pypi.python.org/packages/source/s/setuptools/setuptools-17.0.zip --no-check-certificate</p>
-<p>解压setuptools-17.0.zip, 进入setuptools目录, 执行'python setup.py install'完成easy_install的安装.</p>
-<p>easy_install安装完成后, 执行easy_install pip完成pip的安装</p>
-<p>pip安装完成后执行pip install shadowsocks完成shadowsocks扩展的安装.</p>
+<p>相信在linux下使用本服务的一定是技术工作者了, 所以这里的说明就略微专业一些. 这里只提供最通用的方法, 同时还给出了其他的一些建议, 大家可以研究一下.</p>
+<p>在linux下使用本服务需要两个步骤.首先要在本地的某个端口启动shadowsocks的客户端服务, 然后还要把网络请求转到在本地启动的这个客户端服务</p>
+<ol>
+  <li>本地shadowsocks客户端开启
+    <p>shadowsocks已经发布到python的包管理系统了. 我们通过pip安装shadowsocks, 所以首先要安装pip, 而pip通过easy_install来进行安装. </p>
+    <ul>
+      <li>安装easy_install
+        <ul>
+          <li>下载easy_install: wget https://pypi.python.org/packages/source/s/setuptools/setuptools-17.0.zip --no-check-certificate</li>
+          <li>解压setuptools-17.0.zip并进入setuptools目录</li>
+          <li>执行'python setup.py install'完成easy_install的安装.</li>
+        </ul>
+      </li>
+      <li>easy_install安装完成后, 执行'easy_install pip'完成pip的安装</li>
+      <li>pip安装完成后执行pip install shadowsocks完成shadowsocks扩展的安装.</li>
+      <li>启动本地shadowsocks客户端
+        <ul>
+          <li>登录本站进入<a href="/user">用户中心</a>, 再点击进入左侧导航栏的节点列表, 随机选择一台机器点击进入配置详情, 拷贝页面左上角的配置josn.</li>
+          <li>创建/etc/shadowsocks.json文件, 将刚才拷贝的json保存进去</li>
+          <li>启动本地客户端: nohup sslocal -c /etc/shadowsocks.json & 看到提示starting local socks5 server at port xxxx…表示客户端启动成功.</li>
+        </ul>
+      </li>
+      <p>本地客户端默认是使用1080端口启动的, 如果你本地的1080端口被占用, 客户端的启动会失败. 另外你还可以把客户端的启动放到开机启动项里面.</p>
+    </ul>
+  </li>
+  <li>转发网络请求到本地shadowsocks客户端
+    <p>这里主要介绍如何使用proxychains将请求转发到刚才启动的shadowsocks客户端</p>
+    <ul>
+      <li>安装proxychains
+        <ul>
+          <li>获得proxychains源码. 熟悉的git的同学可以使用'git clone https://github.com/rofl0r/proxychains-ng.git'获取, 不使用git的同学可以从<a href="/download/proxychains-ng.tar.gz">下载</a></li>
+          <li>获得源码后进入proxychains-ng目录. 然后./configure && make && make install</li>
+        </ul>
+      </li>
+      <li>在使用proxychains之前需要对它做个配置, 将下面的配置信息保存到/etc/proxychains.conf.<br/>
+        <pre><code>
+            strict_chain
+            proxy_dns
+            tcp_read_time_out 15000
+            tcp_connect_time_out 8000
+            quite_mode
+
+            [ProxyList]
+            socks5 127.0.0.1 1080
+        </code></pre>
+      </li>
+      <li>尝试一下是否能够翻墙成功~_~
+        <ul>
+          <li>使用命令: proxychains4 telnet www.google.com 3128 可以连接成功.</li>
+          <li>使用命令: proxychains wget “www.google.com” 可以获得一个index.html文件.</li>
+          <li>使用命令: proxychains wget “https://www.youtube.com/watch?v=QMbHLF_zwjs” 可以下载一个视频文件.</li>
+        </ul>
+      </li>
+      <li>其他.
+        <ul>
+          <li>可以看出proxychains总是要加在要执行的命令前面, 所以proxychains不算是全局代理. redsocks是一个全局代理, 感兴趣可以研究一下.</li>
+          <li>相信大多数linux用户不大会在linux上使用浏览器的, 所以这里不介绍如何配置各种浏览器了.</li>
+          <li>proxychains对wget curl pip git都是有效的. 但是发现对小部分命令无效, 比如对go get命令无效.</li>
+          <li>当然你还可以尝试将本地的socks服务转换成http代理.</li>
+          </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
 </div>
 {include file='footer.tpl'}
