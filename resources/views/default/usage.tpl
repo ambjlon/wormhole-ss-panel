@@ -132,7 +132,7 @@
     <ul>
       <li>安装proxychains
         <ul>
-          <li>获得proxychains源码. 熟悉的git的同学可以使用'git clone https://github.com/rofl0r/proxychains-ng.git'获取, 不使用git的同学可以从<a href="/download/proxychains-ng.tar.gz">下载</a></li>
+          <li>获得proxychains源码. 熟悉的git的同学可以使用'git clone https://github.com/rofl0r/proxychains-ng.git'获取, 不使用git的同学可以从<a href="/download/proxychains-ng.tar.gz">这里下载</a></li>
           <li>获得源码后进入proxychains-ng目录. 然后./configure && make && make install</li>
         </ul>
       </li>
@@ -151,8 +151,8 @@
       <li>尝试一下是否能够翻墙成功~_~
         <ul>
           <li>使用命令: proxychains4 telnet www.google.com 3128 可以连接成功.</li>
-          <li>使用命令: proxychains wget “www.google.com” 可以获得一个index.html文件.</li>
-          <li>使用命令: proxychains wget “https://www.youtube.com/watch?v=QMbHLF_zwjs” 可以下载一个视频文件.</li>
+          <li>使用命令: proxychains4 wget “www.google.com” 可以获得一个index.html文件.</li>
+          <li>使用命令: proxychains4 wget “https://www.youtube.com/watch?v=QMbHLF_zwjs” 可以下载一个视频文件.</li>
         </ul>
       </li>
       <li>其他.
