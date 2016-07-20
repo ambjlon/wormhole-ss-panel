@@ -23,6 +23,7 @@
     <li><a href="#client-mac">设置Mac</a></li>
     <li><a href="#client-linux">设置linux</a></li>  
     <li><a href="#client-android">设置Android</a></li>
+    <li><a href="#client-ios">设置iOS</a></li>      
   </ul>
 </div>
 
@@ -98,8 +99,6 @@
 <img src="/myimages/android-2.png" height="460" width="260"/>
 <p>在弹出的对话框中选择信任应用程序, 之后会看到连接成功的提示.</p>
 
-
-
 <p id="client-linux"></p>
 <p><strong>Linux客户端设置</strong></p>
 <p>相信在linux下使用本服务的一定是技术工作者了, 所以这里的说明就略微专业一些. 这里只提供最通用的方法, 同时还给出了其他的一些建议, 大家可以研究一下.</p>
@@ -161,10 +160,26 @@
           <li>相信大多数linux用户不大会在linux上使用浏览器的, 所以这里不介绍如何配置各种浏览器了.</li>
           <li>proxychains对wget curl pip git都是有效的. 但是发现对小部分命令无效, 比如对go get命令无效.</li>
           <li>当然你还可以尝试将本地的socks服务转换成http代理.</li>
-          </ul>
+        </ul>
       </li>
     </ul>
   </li>
 </ol>
+<p id="client-ios"></p>
+<p><strong>设置iOS</strong></p>
+<p>ios客户端推荐使用shadowrocket, 这个app是需要花6元人民币购买的. 这里郑重声明, 本站和这个app没有任何利益关系, 也没有推广这个app的意思, 是否购买由您自己决定. 因为本站的技术水平有限, 没有能力开发ios下的app, 只能推荐大家用这个app做客户端. 目前这个app是ios平台下性价比最高的客户端了.</p>
+<p>1. 在appstore搜索shadowrocket, 就可以看到这个app了, 如下图.  点击购买并完成安装.</p>
+<img src="/myimages/ios1.png" height="180" width="260"/>
+<p>2. 登录本站进入<a href="/user">用户中心</a>, 再点击进入左侧导航栏的节点列表, 随机选择一台机器点击进入配置详情, 请将配置二维码暴露在屏幕上.</p>
+<p>3. 打开shadowrocket, 点击左上角的扫描图标, 如下图所示,  扫描步骤二中的配置二维码, 这样就完成了配置.</p>
+<img src="/myimages/ios3.png" height="180" width="260"/>
+<p>4. 接下来滑动"Not Connected"后面的按钮.(注: 在滑动按钮之前你还可以点击ping test, 测试一下和我们的服务器的连通性.)</p>
+<img src="/myimages/ios4.png" height="180" width="260"/>
+<p>5. 接下来会有一个对话框弹出,大概是询问是否安装vpn配置. 点击Allow</p>
+<img src="/myimages/ios5.png" height="180" width="260"/>
+<p>6.进入iOS系统的设置-&gt 通用-&gt VPN,你会发现VPN那里显示已连接, 点进去VPN后如下图, 同时系统的右上角会有个VPN的图标, 这表示已经可以翻墙服务了, 试着在浏览器打开Google. </p>
+<img src="/myimages/ios7.png" height="180" width="260"/>
+<p>此外你还可以进入shadowrocket的setting进行一些代理规则的设置</p>
 </div>
+
 {include file='footer.tpl'}
