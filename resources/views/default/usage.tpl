@@ -167,7 +167,7 @@
 </ol>
 <p id="client-ios"></p>
 <p><strong>设置iOS</strong></p>
-<p>ios客户端推荐使用shadowrocket, 这个app是需要花6元人民币购买的. 这里郑重声明, 本站和这个app没有任何利益关系, 也没有推广这个app的意思, 是否购买由您自己决定. 因为本站的技术水平有限, 没有能力开发ios下的app, 只能推荐大家用这个app做客户端. 目前这个app是ios平台下性价比最高的客户端了.</p>
+<p>iOS客户端推荐使用shadowrocket, 这个app是需要花6元人民币购买的. 这里郑重声明, 本站和这个app没有任何利益关系, 也没有推广这个app的意思, 是否购买由您自己决定. 因为本站的技术水平有限, 没有能力开发iOS下的app, 只能推荐大家用这个app做客户端. 目前这个app是ios平台下性价比最高的客户端了.</p>
 <p>1. 在appstore搜索shadowrocket, 就可以看到这个app了, 如下图.  点击购买并完成安装.</p>
 <img src="/myimages/ios1.png" height="460" width="260"/>
 <p>2. 登录本站进入<a href="/user">用户中心</a>, 再点击进入左侧导航栏的节点列表, 随机选择一台机器点击进入配置详情, 请将配置二维码暴露在屏幕上.</p>
@@ -177,7 +177,7 @@
 <img src="/myimages/ios4.png" height="460" width="260"/>
 <p>5. 接下来会有一个对话框弹出,大概是询问是否安装vpn配置. 点击Allow</p>
 <img src="/myimages/ios5.png" height="460" width="260"/>
-<p>6.进入iOS系统的设置-&gt 通用-&gt VPN,你会发现VPN那里显示已连接, 点进去VPN后如下图, 同时系统的右上角会有个VPN的图标, 这表示已经可以翻墙服务了, 试着在浏览器打开Google. </p>
+<p>6.进入iOS系统的设置-&gt 通用-&gt VPN,你会发现VPN那里显示已连接, 点VPN进去后如下图, 同时系统的右上角会有个VPN的图标, 这表示已经可以翻墙服务了, 试着在浏览器打开Google. </p>
 <img src="/myimages/ios7.png" height="460" width="260"/>
 <p>此外你还可以进入shadowrocket的setting进行一些代理规则的设置</p>
 </div>
