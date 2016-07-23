@@ -170,3 +170,15 @@ CREATE TABLE `node_load` (
   `log_time` timestamp(14) NOT NULL DEFAULT NOW(),
   PRIMARY KEY (`node_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+-- donation 记录用户的捐赠
+-- insert into donation (user_name, email, amount, donation_time, pay_way) values ('陈江龙', 'ambjlon@163.com', 30, '2016-07-22 11:00:01','支付宝');
+DROP TABLE IF EXISTS `donation`;
+CREATE TABLE `donation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `amount` float(6,2) NOT NULL,
+  `donation_time` timestamp(14) NOT NULL,
+  `pay_way` varchar(32) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 

@@ -45,6 +45,8 @@ $app->get('/code', 'App\Controllers\HomeController:code');
 $app->get('/tos', 'App\Controllers\HomeController:tos');
 $app->get('/debug', 'App\Controllers\HomeController:debug');
 $app->get('/usage', 'App\Controllers\HomeController:usage');
+$app->get('/donation', 'App\Controllers\HomeController:donation');
+$app->get('/donation/board', 'App\Controllers\HomeController:donationboard');
 //$app->get('/download', 'App\Controllers\HomeController:download');//文件下载功能适用nginx直接提供服务, 不再使用php了.
 // User Center
 $app->group('/user', function () {
