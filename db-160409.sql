@@ -172,7 +172,7 @@ CREATE TABLE `node_load` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
 -- donation 记录用户的捐赠
 -- insert into donation (user_name, email, amount, donation_time, pay_way) values ('陈江龙', 'ambjlon@163.com', 30, '2016-07-22 11:00:01','支付宝');
--- 注意 执行上面的插入语句时先执行set names utf8, 这是设置mysql的命令行客户端编码. 否则, 页面的展示中中文会乱码.
+-- 注意 执行上面的插入语句时先执行set names utf8, 这是设置mysql的命令行客户端编码. 否则, 页面的展示中中文会乱码. 同样的, select user表的时候也要set names utf8显示出来的中文才不乱吗.
 DROP TABLE IF EXISTS `donation`;
 CREATE TABLE `donation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

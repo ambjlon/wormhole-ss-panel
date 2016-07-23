@@ -7,7 +7,7 @@
     </ul>
   </div>
 
-<p><strong>下面用户的慷慨捐赠将永远铭刻在这个页面. 本站对你们的捐赠表示衷心的感谢!</strong></p>
+<p><strong><font color="#FF0000">本站对你们的捐赠表示衷心的感谢!</font></strong></p>
 </br>
 <table class="table">
 
@@ -24,7 +24,7 @@
     <tr>
       <td>{$log->user_name}</td>
       <td>{$log->email}</td>
-      <td>{$log->amount}</td>
+      <td>￥{$log->amount}</td>
       <td>{$log->donation_time}</td>
       <td>{$log->pay_way}</td>
     </tr>
