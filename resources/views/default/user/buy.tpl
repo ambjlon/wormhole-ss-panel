@@ -16,21 +16,28 @@
   <div id="myTabContent" class="tab-content">
     <div class="tab-pane fade in active" id="halfyear">
       <div class="login-box-body">
-        <form>
-          <div class="form-group has-feedback">
-            <input id="halfyearcardnum" name="Email" type="text" class="form-control" placeholder="半年付卡号"/>
-            <span  class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="email">卡号:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="halfyearcardnum">
+            </div>
           </div>
-          <div class="form-group has-feedback">
-            <input id="halyearpasswd" name="Password" type="password" class="form-control" placeholder="半年付卡号密码"/>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">密码:</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="halfyearpwd">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">购买</button>
+            </div>
           </div>
         </form>
-        <div class="row">
-          <div class="col-xs-4">
-            <button id="login" type="submit" class="btn btn-primary btn-block btn-flat">购买</button>
-          </div><!-- /.col -->
-        </div>
+
+
         <div id="msg-success" class="alert alert-info alert-dismissable" style="display: none;">
           <button type="button" class="close" id="ok-close" aria-hidden="true">&times;</button>
           <h4><i class="icon fa fa-info"></i> 购买成功!</h4>
