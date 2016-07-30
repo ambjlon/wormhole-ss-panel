@@ -15,7 +15,7 @@
   </ul>
   <div id="myTabContent" class="tab-content">
     <div class="tab-pane fade in active" id="halfyear">
-      <div class="login-box-body">
+
 
         <form class="form-horizontal" role="form">
           <div class="form-group">
@@ -48,7 +48,7 @@
           <h4><i class="icon fa fa-warning"></i> 卡号或密码无效!</h4>
           <p id="msg-error-p"></p>
         </div>
-      </div>
+
       <div class="tab-pane fade" id="year">
         
       </div>
