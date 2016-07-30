@@ -36,9 +36,19 @@ class UserController extends BaseController
         }
         return $this->view()->assign('msg',$msg)->display('user/index.tpl');
     }
-    public function buy($request, $response, $args)
+    public function buy()
     {
-        return $this->view()->assign('msg',$msg)->display('user/buy.tpl');
+        return $this->view()->display('user/buy.tpl');
+    }
+
+    public function handleBuy($request, $response, $args)
+    {
+        
+        $cardnum = $request->getParam('cardnum');
+        $passwd = $request->getParam('passwd');
+        //error_log($cardnum, 3,'/home/ss/debug.log');
+        $res['ret'] = 1;
+        return $this->echoJson($response, $res);
     }
 
     
