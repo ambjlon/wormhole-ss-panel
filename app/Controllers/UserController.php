@@ -36,6 +36,10 @@ class UserController extends BaseController
         }
         return $this->view()->assign('msg',$msg)->display('user/index.tpl');
     }
+    public function buy($request, $response, $args)
+    {
+        return $this->view()->assign('msg',$msg)->display('user/buy.tpl');
+    }
 
     
     public function node($request, $response, $args)

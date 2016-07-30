@@ -68,6 +68,7 @@ $app->group('/user', function () {
     $this->post('/kill', 'App\Controllers\UserController:handleKill');
     $this->get('/logout', 'App\Controllers\UserController:logout');
 })->add(new Auth());
+    $this->get('/buy', 'App\Controllers\UserController:buy');
 
 // Auth
 $app->group('/auth', function () {
