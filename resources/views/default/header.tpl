@@ -31,7 +31,7 @@
             <li ><a href="/">首页</a></li>
             <li><a href="/usage">使用教程</a></li>
             <li><a href="/code">邀请码</a></li>
-            <li><a href="/donation">捐赠</a></li>
+            <!--li><a href="/donation">捐赠</a></li  打开次链接便可以发起捐赠-->
             {if $user->isLogin}
 <li><a href="/user">用户中心</a></li>
 <li><a href="/user/logout">退出</a></li>
