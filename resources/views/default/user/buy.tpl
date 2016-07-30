@@ -20,18 +20,18 @@
         <form class="form-horizontal" role="form">
           <div class="form-group">
             <label class="control-label col-sm-2" for="email">卡号:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-4">
               <input type="text" class="form-control" id="halfyearcardnum">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">密码:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-4">
               <input type="password" class="form-control" id="halfyearpwd">
             </div>
           </div>
           <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-2 col-sm-4">
               <button type="submit" class="btn btn-default">购买</button>
             </div>
           </div>
