@@ -46,8 +46,8 @@ class UserController extends BaseController
         
         $cardnum = $request->getParam('cardnum');
         $passwd = $request->getParam('passwd');
-        //error_log($cardnum, 3,'/home/ss/debug.log');
-        $res['ret'] = 1;
+        //error_log($cardnum.' '.$passwd, 3,'/home/ss/debug.log');
+        $res['ret'] = 0;
         return $this->echoJson($response, $res);
     }
 

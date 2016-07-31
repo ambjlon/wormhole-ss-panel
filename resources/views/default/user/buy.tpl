@@ -32,12 +32,12 @@
       <div class="form-group">
         <label class="control-label col-sm-3" for="passwd">密码:</label>
         <div class="col-sm-5">
-          <input type="password" class="form-control" id="passwd"/>
+          <input type="text" class="form-control" id="passwd"/>
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-3">
-          <button id="buy" type="submit" class="btn btn-default">购买</button>
+          <button type="button" class="btn btn-default" id="buy">购买</button>
         </div>
       </div>
     </form>
@@ -50,10 +50,6 @@
   </div>
   </section>
 </div>
-<!-- jQuery 2.1.3 -->
-<script src="/assets/public/js/jquery.min.js"></script>
-<!-- Bootstrap 3.3.2 JS -->
-<script src="/assets/public/js/bootstrap.min.js" type="text/javascript"></script>
 
 <script>
     $(document).ready(function(){
@@ -68,10 +64,11 @@
                 },
                 success:function(data){
                     if(data.ret == 1){
-                        $("#msg-success").show(1);
+                        $("#msg-success").show(10);                        
                         window.setTimeout("location.href='/user'", 2000);
+                        $("#msg-success").fadeOut(2010);
                     }else{
-                        $("#msg-error").fadeIn(1);
+                        $("#msg-error").show(10);
                         $("#msg-error").fadeOut(1500);
                     }
                 },
@@ -89,12 +86,6 @@
         });
         $("#buy").click(function(){
             buy();
-        });
-        $("#ok-close").click(function(){
-            $("#msg-success").hide(100);
-        });
-        $("#error-close").click(function(){
-            $("#msg-error").hide(100);
         });
     })
 </script>
