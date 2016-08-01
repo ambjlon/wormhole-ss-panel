@@ -131,6 +131,8 @@ CREATE TABLE `user` (
   `is_email_verify` tinyint(4) NOT NULL DEFAULT '0',
   `reg_ip` varchar(128) NOT NULL DEFAULT '127.0.0.1',
   `qq` varchar(31) NOT NULL DEFAULT '',
+  `pay_status` varchar(3) NOT NULL DEFAULT '0', --0:从未购买过 1:购买过且在有效期内 2:购买过但是已过期
+  `service_deadline` timestamp NOT NULL DEFAULT '1987-09-06 11:00:00', --付费后  服务截止日志
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `port` (`port`)
@@ -182,4 +184,13 @@ CREATE TABLE `donation` (
   `donation_time` timestamp(14) NOT NULL,
   `pay_way` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+--cardnum_passwd 存放代金卡使用情况 涉及交易非常重要.
+DROP TABLE IF EXISTS `cradnum_passwd`;
+CREATE TABLE `cardnum_passwd` (
+  `cardnum` varchar(15)  CHARACTER SET utf8 NOT NULL,
+  `passwd` varchar(31)  CHARACTER SET utf8 NOT NULL,
+  `amount` float(6,2) NOT NULL,
+  `is_consumed` tinyint(1) NOT NULL DEFAULT 
+  PRIMARY KEY (`cardnum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 

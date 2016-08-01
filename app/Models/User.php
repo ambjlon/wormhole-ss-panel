@@ -17,6 +17,8 @@ class User extends Model
 
     public $isLogin;
 
+    public $access_buy_times;
+    
     public $isAdmin;
 
     protected $casts = [
@@ -43,7 +45,7 @@ class User extends Model
     public function lastSsTime()
     {
         if ($this->attributes['t'] == 0) {
-            return "从未使用喵";
+            return "从未使用";
         }
         return Tools::toDateTime($this->attributes['t']);
     }

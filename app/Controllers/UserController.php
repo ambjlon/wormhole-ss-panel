@@ -4,10 +4,10 @@ namespace App\Controllers;
 
 use App\Models\InviteCode;
 use App\Services\Auth;
-use App\Models\Node, App\Models\TrafficLog, App\Models\CheckInLog;
+use App\Models\Node, App\Models\TrafficLog, App\Models\CheckInLog, App\Models\CardnumPasswd;
 use App\Services\Config,App\Services\DbConfig;
 use App\Utils\Hash, App\Utils\Tools;
-
+use App\Services\RedisClient;
 
 /**
  *  HomeController
@@ -16,10 +16,13 @@ class UserController extends BaseController
 {
 
     private $user;
+    private $redisClient;
 
     public function __construct()
     {
         $this->user = Auth::getUser();
+        $client = new RedisClient();
+        $this->redisClient = $client;
     }
     
     public function view()
@@ -43,11 +46,70 @@ class UserController extends BaseController
 
     public function handleBuy($request, $response, $args)
     {
+        $uid = $this->user->uid;
+        //充值接口访问频次限制
+        $key = 'ACCESS_BUY_'.$uid;
+        if($this->redisClient->hexists($key,'times') && $this->redisClient->hexists($key,'expiretime')){
+            $nowtime = time();
+            $expiretime = $this->redisClient->hget($key,'expiretime');
+            $times = $this->redisClient->hget($key,'times');
+            if($expiretime >= $nowtime){
+                $this->redisClient->hset($key,'times',$times+1);
+                if($times >= 1000){
+                    $res['ret'] = 0;
+                    $res['ret'] = '访问充值接口太频繁, 请明天再试!';
+                    return $this->echoJson($response, $res);
+                }
+            }else{
+                $this->redisClient->hset($key,'times',1);
+                $this->redisClient->hset($key,'expiretime',$nowtime+86400);
+            }
+        }else{
+            $this->redisClient->hset($key,'times',1);
+            $this->redisClient->hset($key,'expiretime',$nowtime+86400);
+        }
+
+        
         
         $cardnum = $request->getParam('cardnum');
         $passwd = $request->getParam('passwd');
         //error_log($cardnum.' '.$passwd, 3,'/home/ss/debug.log');
-        $res['ret'] = 0;
+        $log = CardnumPasswd::find($cardnum);
+        if($log == null){
+            $res['ret'] = 0;
+            $res['msg'] = '卡号或密码无效!';
+        }
+        if($passwd == $log->passwd && $log->is_consumed == 0){
+            $amount = $log->amount;
+            if($amount == 6){
+                if($this->user->pay_status == 0 || $this->user->pay_status == 2){
+                    $res['ret'] = 0;
+                    $res['msg'] = '你还未购买服务, 不能使用加油包, 请先购买服务!';
+                }else{
+                    $this->user->transfer_enable += 53687091200;
+                    $this->user->save();
+                }
+            }else if($amount == 30){
+                if($this->user->pay_status == 0 || $this->user->pay_status == 2){
+                    //echo date('Y-m-d H:i:s',strtotime('+1 year',strtotime('2016-02-29 13:03:04')));
+                    $nextyear = date('Y-m-d H:i:s',strtotime('+1 year'));
+                    $this->user->service_deadline = $nextyear;
+                    $this->user->d = 0;
+                    $this->user->u =0;
+                    $this->user->transfer_enable = 53687091200;
+                    $this->user->
+                }
+            }else if($amount == 45){
+                
+            }
+            error_log('', 3,'/home/ss/debug.log');
+            $res['ret'] = 1;
+            $res['msg'] = '充值成功. 正在向用户中心跳转...';
+        }else{
+            $res['ret'] = 0;
+            $res['msg'] = '卡号或密码无效!';
+        }
+
         return $this->echoJson($response, $res);
     }
 
