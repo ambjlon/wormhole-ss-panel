@@ -68,8 +68,6 @@ class UserController extends BaseController
             $this->redisClient->hset($key,'times',1);
             $this->redisClient->hset($key,'expiretime',$nowtime+86400);
         }
-
-        
         
         $cardnum = $request->getParam('cardnum');
         $passwd = $request->getParam('passwd');
@@ -85,32 +83,73 @@ class UserController extends BaseController
                 if($this->user->pay_status == 0 || $this->user->pay_status == 2){
                     $res['ret'] = 0;
                     $res['msg'] = '你还未购买服务, 不能使用加油包, 请先购买服务!';
+                    return $this->echoJson($response, $res);
                 }else{
                     $this->user->transfer_enable += 53687091200;
                     $this->user->save();
+                    $log->is_consumed = 1;
+                    $log->save();
+                    $res['ret'] = 1;
+                    $res['msg'] = '加油包充值成功, 本月流量增加了50G, 即将跳转到用户中心...';
+                    return $this->echoJson($response, $res);
                 }
             }else if($amount == 30){
                 if($this->user->pay_status == 0 || $this->user->pay_status == 2){
                     //echo date('Y-m-d H:i:s',strtotime('+1 year',strtotime('2016-02-29 13:03:04')));
-                    $nextyear = date('Y-m-d H:i:s',strtotime('+1 year'));
-                    $this->user->service_deadline = $nextyear;
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+6 month'));
+                    $this->user->service_deadline = $service_deadline;
                     $this->user->d = 0;
                     $this->user->u =0;
                     $this->user->transfer_enable = 53687091200;
-                    $this->user->
+                    $this->user->pay_status = 1;
+                    $this->user->save();
+                    $log->is_consumed = 1;
+                    $log->save();
+                    $res['ret'] = 1;
+                    $res['msg'] = '成功购买了半年的服务, 即将跳转到用户中心...';
+                    return $this->echoJson($response, $res);
+                }else{
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+6 month',strtotime($this->user->service_deadline)));
+                    $this->user->service_deadline = $service_deadline;
+                    $this->user->save();
+                    $log->is_consumed = 1;
+                    $log->save();
+                    $res['ret'] = 1;
+                    $res['msg'] = '成功购买了半年的服务, 即将跳转到用户中心...';
+                    return $this->echoJson($response, $res);
                 }
             }else if($amount == 45){
-                
+                if($this->user->pay_status == 0 || $this->user->pay_status == 2){
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+1 year'));
+                    $this->user->service_deadline = $service_deadline;
+                    $this->user->d = 0;
+                    $this->user->u =0;
+                    $this->user->transfer_enable = 53687091200;
+                    $this->user->pay_status = 1;
+                    $this->user->save();
+                    $log->is_consumed = 1;
+                    $log->save();
+                    $res['ret'] = 1;
+                    $res['msg'] = '成功购买了一年的服务, 即将跳转到用户中心...';
+                    return $this->echoJson($response, $res);
+                }else{
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+1 year',strtotime($this->user->service_deadline)));
+                    $this->user->service_deadline = $service_deadline;
+                    $this->user->save();
+                    $log->is_consumed = 1;
+                    $log->save();
+                    $res['ret'] = 1;
+                    $res['msg'] = '成功购买了一年的服务, 即将跳转到用户中心...';
+                    return $this->echoJson($response, $res);
+                }
             }
-            error_log('', 3,'/home/ss/debug.log');
-            $res['ret'] = 1;
-            $res['msg'] = '充值成功. 正在向用户中心跳转...';
+            $nowtime = time();
+            error_log('', 3,'/home/ss/accounts/'.$this->user->uid.'_'.$nowtime.'_'$amount.'.log');
         }else{
             $res['ret'] = 0;
             $res['msg'] = '卡号或密码无效!';
+            return $this->echoJson($response, $res);
         }
-
-        return $this->echoJson($response, $res);
     }
 
     
