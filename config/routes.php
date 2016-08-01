@@ -15,10 +15,10 @@ use Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware;
  */
 
 // config
-//$debug = false;
-//if (defined("DEBUG")) {
-//    $debug = true;
-//}
+$debug = false;
+if (defined("DEBUG")) {
+    $debug = true;
+}
 /***
  * $configuration = [
  * 'settings' => [

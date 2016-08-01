@@ -49,8 +49,8 @@ class UserController extends BaseController
         $uid = $this->user->uid;
         //充值接口访问频次限制
         $key = 'ACCESS_BUY_'.$uid;
+        $nowtime = time();
         if($this->redisClient->hexists($key,'times') && $this->redisClient->hexists($key,'expiretime')){
-            $nowtime = time();
             $expiretime = $this->redisClient->hget($key,'expiretime');
             $times = $this->redisClient->hget($key,'times');
             if($expiretime >= $nowtime){
@@ -71,11 +71,13 @@ class UserController extends BaseController
         
         $cardnum = $request->getParam('cardnum');
         $passwd = $request->getParam('passwd');
-        //error_log($cardnum.' '.$passwd, 3,'/home/ss/debug.log');
-        $log = CardnumPasswd::find($cardnum);
+        //error_log($cardnum.' '.$passwd."\n", 3,'/home/ss/debug.log');
+        $log = CardnumPasswd::where('cardnum', $cardnum)->first();
+        //error_log(gettype($log)."\n", 3,'/home/ss/debug.log');
         if($log == null){
             $res['ret'] = 0;
-            $res['msg'] = '卡号或密码无效!';
+            $res['msg'] = '卡号或密码无效!@';
+            return $this->echoJson($response, $res);
         }
         if($passwd == $log->passwd && $log->is_consumed == 0){
             $amount = $log->amount;
@@ -144,7 +146,7 @@ class UserController extends BaseController
                 }
             }
             $nowtime = time();
-            error_log('', 3,'/home/ss/accounts/'.$this->user->uid.'_'.$nowtime.'_'$amount.'.log');
+            error_log('', 3,'/home/ss/accounts/'.$this->user->uid.'_'.$nowtime.'_'.$amount.'.log');
         }else{
             $res['ret'] = 0;
             $res['msg'] = '卡号或密码无效!';

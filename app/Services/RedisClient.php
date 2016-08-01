@@ -32,7 +32,7 @@ class RedisClient
     {
         return $this->client->get($key);
     }
-
+    
     public function set($key, $value)
     {
         $this->client->set($key, $value);
@@ -47,5 +47,17 @@ class RedisClient
     public function del($key)
     {
         $this->client->del($key);
+    }
+
+    public function hexists($key,$hkey){
+        return $this->client->hexists($key,$hkey);
+    }
+
+    public function hset($key, $hkey, $value){
+        $this->client->hset($key, $hkey, $value);
+    }
+
+    public function hget($key, $hkey){
+        return $this->client->hget($key, $hkey);
     }
 }

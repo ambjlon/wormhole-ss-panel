@@ -41,12 +41,8 @@
         </div>
       </div>
     </form>
-    <p id="msg-success"  class="text-center" style="display: none;">
-     <font size="5" color="#008000">购买成功! 正在向用户中心跳转...</font>
-    </p>
-    <p id="msg-error" class="text-center" style="display: none;">
-      <font size="5" color="#DC143C">卡号或密码无效!</font>
-    </p>
+    <p id="msg-success-p" class="text-center" style="display: none;"><font id="msg-success" size="5" color="#008000"></font></p>
+    <p id="msg-error-p" class="text-center" style="display: none;"><font id="msg-error" size="5" color="#DC143C"></font></p>
   </div>
   </section>
 </div>
@@ -64,18 +60,19 @@
                 },
                 success:function(data){
                     if(data.ret == 1){
-                        $("#msg-success").show(10);                        
+                        $("#msg-success").html(data.msg);
+                        $("#msg-success-p").show(10);
                         window.setTimeout("location.href='/user'", 2000);
-                        $("#msg-success").fadeOut(2010);
+                        $("#msg-success-p").fadeOut(2010);
                     }else{
-                        $("#msg-error").show(10);
-                        $("#msg-error").fadeOut(1500);
+                        $("#msg-error").html(data.msg);
+                        $("#msg-error-p").show(10);
+                        $("#msg-error-p").fadeOut(1500);
                     }
                 },
                 error:function(jqXHR){
-                    $("#msg-error").hide(10);
-                    $("#msg-error").show(100);
-                    $("#msg-error-p").html("Ajax异步发生错误："+jqXHR.status);
+                        $("#msg-error").html("Ajax异步发生错误："+jqXHR.status);
+                        $("#msg-error-p").show(100);
                 }
             });
         }

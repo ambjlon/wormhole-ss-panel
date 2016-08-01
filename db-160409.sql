@@ -191,6 +191,6 @@ CREATE TABLE `cardnum_passwd` (
   `cardnum` varchar(15)  CHARACTER SET utf8 NOT NULL,
   `passwd` varchar(31)  CHARACTER SET utf8 NOT NULL,
   `amount` float(6,2) NOT NULL,
-  `is_consumed` tinyint(1) NOT NULL DEFAULT 
+  `is_consumed` tinyint(1) NOT NULL,
   PRIMARY KEY (`cardnum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
