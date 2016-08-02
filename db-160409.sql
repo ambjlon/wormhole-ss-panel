@@ -188,9 +188,11 @@ CREATE TABLE `donation` (
 --cardnum_passwd 存放代金卡使用情况 涉及交易非常重要.
 DROP TABLE IF EXISTS `cradnum_passwd`;
 CREATE TABLE `cardnum_passwd` (
+  `id` int(11) NOT NULL AUTO_INCREMENT, 
   `cardnum` varchar(15)  CHARACTER SET utf8 NOT NULL,
   `passwd` varchar(31)  CHARACTER SET utf8 NOT NULL,
   `amount` float(6,2) NOT NULL,
   `is_consumed` tinyint(1) NOT NULL,
-  PRIMARY KEY (`cardnum`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`cardnum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
