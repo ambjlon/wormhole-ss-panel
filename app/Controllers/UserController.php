@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Controllers;
+date_default_timezone_set('Asia/Shanghai');
 
 use App\Models\InviteCode;
 use App\Services\Auth;
