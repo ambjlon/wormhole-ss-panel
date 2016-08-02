@@ -103,7 +103,8 @@ CREATE TABLE `ss_password_reset` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
+--alter table user add column pay_status varchar(3) not null default '0';
+--alter table user add column service_deadline timestamp not null default '1987-09-06 11:00:00';
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

@@ -62,12 +62,12 @@
                     if(data.ret == 1){
                         $("#msg-success").html(data.msg);
                         $("#msg-success-p").show(10);
-                        window.setTimeout("location.href='/user'", 2000);
-                        $("#msg-success-p").fadeOut(2010);
+                        window.setTimeout("location.href='/user'", 2400);
+                        $("#msg-success-p").fadeOut(2410);
                     }else{
                         $("#msg-error").html(data.msg);
                         $("#msg-error-p").show(10);
-                        $("#msg-error-p").fadeOut(1500);
+                        $("#msg-error-p").fadeOut(2400);
                     }
                 },
                 error:function(jqXHR){
