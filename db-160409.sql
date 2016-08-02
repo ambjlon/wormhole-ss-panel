@@ -186,7 +186,7 @@ CREATE TABLE `donation` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
 --cardnum_passwd 存放代金卡使用情况 涉及交易非常重要.
-DROP TABLE IF EXISTS `cradnum_passwd`;
+DROP TABLE IF EXISTS `cardnum_passwd`;
 CREATE TABLE `cardnum_passwd` (
   `id` int(11) NOT NULL AUTO_INCREMENT, 
   `cardnum` varchar(15)  CHARACTER SET utf8 NOT NULL,
