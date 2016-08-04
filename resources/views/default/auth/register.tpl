@@ -6,7 +6,6 @@
     </div>
 
     <div class="register-box-body">
-        <!--p class="login-box-msg">注册，然后变成一只猫。</p-->
 
         <div class="form-group has-feedback">
             <input type="text" id="name" class="form-control" placeholder="昵称"/>
@@ -182,7 +181,7 @@
                 error: function (jqXHR) {
                     $("#msg-error").hide(10);
                     $("#msg-error").show(100);
-                    $("#msg-error-p").html("发生错误：" + jqXHR.status);
+                    $("#msg-error-p").html("Ajax异步发生错误：" + jqXHR.status);
                     clearTimer();
                 }
             });

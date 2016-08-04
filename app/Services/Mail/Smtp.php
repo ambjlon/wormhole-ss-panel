@@ -30,13 +30,31 @@ class Smtp extends Base
 
     public function getConfig()
     {
+        $smtpHostAry = explode(';', Config::get('smtp_host'));
+        $usernameAry = explode(';', Config::get('smtp_username'));
+        $portAry = explode(';', Config::get('smtp_port'));
+        $senderAry = explode(';', Config::get('smtp_sender'));
+        $nameAry = explode(';', Config::get('smtp_name'));
+        $passwordAry = explode(';', Config::get('smtp_password'));
+
+        for($i=0;$i<count($portAry);$i++){
+            $conf[$i]['host'] = $smtpHostAry[$i];
+            $conf[$i]['username'] = $usernameAry[$i];
+            $conf[$i]['port'] = $portAry[$i];
+            $conf[$i]['sender'] = $senderAry[$i];
+            $conf[$i]['name'] = $nameAry[$i];
+            $conf[$i]['password'] = $passwordAry[$i];
+        }
+
+        $rnd = rand(0, count($portAry)-1);
+                
         return [
-            "host" => Config::get('smtp_host'),
-            "username" => Config::get('smtp_username'),
-            "port" => Config::get('smtp_port'),
-            "sender" => Config::get('smtp_sender'),
-            "name" => Config::get('smtp_name'),
-            "passsword" => Config::get('smtp_passsword')
+            "host" => $conf[$rnd]['host'],
+            "username" => $conf[$rnd]['username'],
+            "port" => $conf[$rnd]['port'],
+            "sender" => $conf[$rnd]['sender'],
+            "name" => $conf[$rnd]['name'],
+            "passsword" => $conf[$rnd]['password']
         ];
     }
 
@@ -44,14 +62,14 @@ class Smtp extends Base
     {
         $mail = $this->mail;
         $mail->addAddress($to);     // Add a recipient
-        $mail->isHTML(true);
+        //$mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = $text;
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         if (!$mail->send()) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
 }

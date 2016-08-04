@@ -61,10 +61,10 @@ class Mail
      * @param $file
      * @return bool|void
      */
-    public static function send($to, $subject, $template, $ary = [], $file = [])
+    public static function send($to, $subject, $body) //只是用来发个验证码和重置密码, 不使用复杂的body了. //$template, $ary = [], $file = [])
     {
-        $text = self::genHtml($template, $ary);
-        Logger::debug($text);
-        return self::getClient()->send($to, $subject, $text, $file);
+        //$text = self::genHtml($template, $ary);
+        //Logger::debug($text);
+        return self::getClient()->send($to, $subject, $body);
     }
 }

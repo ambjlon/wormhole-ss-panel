@@ -172,10 +172,10 @@ class AuthController extends BaseController
 
         if (EmailVerify::sendVerification($email)) {
             $res['ret'] = 1;
-            $res['msg'] = '验证代码已发送至您的邮箱，请在登录邮箱后将验证码填到相应位置.';
+            $res['msg'] = '验证代码已发送至您的邮箱，请登录邮箱获取验证码并填到相应位置.';
         } else {
             $res['ret'] = 0;
-            $res['msg'] = '邮件发送失败，请联系管理员';
+            $res['msg'] = '邮件发送失败，请联系管理员(qq695764872)';
         }
         return $this->echoJson($response, $res);
     }
