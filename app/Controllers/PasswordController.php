@@ -31,9 +31,13 @@ class PasswordController extends BaseController
             $rs['msg'] = '此邮箱不存在.';
             return $response->getBody()->write(json_encode($rs));
         }
-        Password::sendResetEmail($email);
-        $rs['ret'] = 1;
-        $rs['msg'] = '重置邮件已经发送,请检查邮箱.';
+        if(Password::sendResetEmail($email)){           
+            $rs['ret'] = 1;
+            $rs['msg'] = '重置邮件已经发送,请检查邮箱.';
+        }else{
+            $rs['ret'] = 0;
+            $rs['msg'] = '邮件发送失败, 请联系管理员(qq695764872)';
+        }
         return $response->getBody()->write(json_encode($rs));
     }
 
