@@ -105,6 +105,8 @@ CREATE TABLE `ss_password_reset` (
 
 --alter table user add column pay_status varchar(3) not null default '0';
 --alter table user add column service_deadline timestamp not null default '1987-09-06 11:00:00';
+--alter table user add column next_service_deadline timestamp not null default '1987-09-06 11:00:00';
+--alter table user add column purchase_time timestamp not null default '2036-09-06 11:00:00';
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -133,7 +135,9 @@ CREATE TABLE `user` (
   `reg_ip` varchar(128) NOT NULL DEFAULT '127.0.0.1',
   `qq` varchar(31) NOT NULL DEFAULT '',
   `pay_status` varchar(3) NOT NULL DEFAULT '0', --0:从未购买过 1:购买过且在有效期内 2:购买过但是已过期
-  `service_deadline` timestamp NOT NULL DEFAULT '1987-09-06 11:00:00', --付费后  服务截止日志
+  `service_deadline` timestamp NOT NULL DEFAULT '1987-09-06 11:00:00', --服务截止时间
+  `next_service_deadline` timestamp NOT NULL DEFAULT '1987-09-06 11:00:00', --本月服务截止时间
+  `purchase_time` timestamp NOT NULL DEFAULT '2036-09-06 11:00:00', --服务购买时间
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `port` (`port`)

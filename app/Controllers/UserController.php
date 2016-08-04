@@ -98,8 +98,12 @@ class UserController extends BaseController
             }else if($amount == 30){
                 if($this->user->pay_status == 0 || $this->user->pay_status == 2){
                     //echo date('Y-m-d H:i:s',strtotime('+1 year',strtotime('2016-02-29 13:03:04')));
-                    $service_deadline = date('Y-m-d H:i:s',strtotime('+6 month'));
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+180 day'));
+                    $next_service_deadline = date('Y-m-d H:i:s',strtotime('+30 day'));
+                    $purchase_time = date('Y-m-d H:i:s',time());
                     $this->user->service_deadline = $service_deadline;
+                    $this->user->purchase_time = $purchase_time;
+                    $this->user->next_service_deadline = $next_service_deadline;
                     $this->user->d = 0;
                     $this->user->u =0;
                     $this->user->transfer_enable = 53687091200;
@@ -111,7 +115,7 @@ class UserController extends BaseController
                     $res['msg'] = '成功购买了半年的服务, 即将跳转到用户中心...';
                     return $this->echoJson($response, $res);
                 }else{
-                    $service_deadline = date('Y-m-d H:i:s',strtotime('+6 month',strtotime($this->user->service_deadline)));
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+180 day',strtotime($this->user->service_deadline)));
                     $this->user->service_deadline = $service_deadline;
                     $this->user->save();
                     $log->is_consumed = 1;
@@ -122,8 +126,12 @@ class UserController extends BaseController
                 }
             }else if($amount == 45){
                 if($this->user->pay_status == 0 || $this->user->pay_status == 2){
-                    $service_deadline = date('Y-m-d H:i:s',strtotime('+1 year'));
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+360 day'));
+                    $next_service_deadline = date('Y-m-d H:i:s',strtotime('+30 day'));
+                    $purchase_time = date('Y-m-d H:i:s',time());
                     $this->user->service_deadline = $service_deadline;
+                    $this->user->next_service_deadline = $next_service_deadline;
+                    $this->user->purchase_time = $purchase_time;
                     $this->user->d = 0;
                     $this->user->u =0;
                     $this->user->transfer_enable = 53687091200;
@@ -135,7 +143,7 @@ class UserController extends BaseController
                     $res['msg'] = '成功购买了一年的服务, 即将跳转到用户中心...';
                     return $this->echoJson($response, $res);
                 }else{
-                    $service_deadline = date('Y-m-d H:i:s',strtotime('+1 year',strtotime($this->user->service_deadline)));
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+360 year',strtotime($this->user->service_deadline)));
                     $this->user->service_deadline = $service_deadline;
                     $this->user->save();
                     $log->is_consumed = 1;
