@@ -27,13 +27,11 @@ class EmailVerify
             return false;
         }
         $appName = Config::get('appName');
-        $subject = $appName . ' 邮箱验证';
+        $subject = $appName . ' 邮箱验证码';
        
         try {
-            Mail::send($email, $subject,'auth/verify.tpl',[
-                'verification' => $verification,
-                'ttl' => $ttl
-            ],[]);
+            $body = "您的验证码是:\n".$verification->token."\n验证码有效期".$ttl."分钟.\n";
+            Mail::send($email, $subject, $body);
         } catch (Exception $e) {
             return false;
         }

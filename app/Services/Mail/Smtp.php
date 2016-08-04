@@ -44,7 +44,7 @@ class Smtp extends Base
     {
         $mail = $this->mail;
         $mail->addAddress($to);     // Add a recipient
-        $mail->isHTML(true);
+        //$mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = $text;
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
