@@ -67,9 +67,9 @@ class Smtp extends Base
         $mail->Body = $text;
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         if (!$mail->send()) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
 }
