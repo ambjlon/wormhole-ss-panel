@@ -37,7 +37,7 @@ class Smtp extends Base
         $nameAry = explode(';', Config::get('smtp_name'));
         $passwordAry = explode(';', Config::get('smtp_password'));
 
-        for($i=0;i<count($portAry);$i++){
+        for($i=0;$i<count($portAry);$i++){
             $conf[$i]['host'] = $smtpHostAry[$i];
             $conf[$i]['username'] = $usernameAry[$i];
             $conf[$i]['port'] = $portAry[$i];
