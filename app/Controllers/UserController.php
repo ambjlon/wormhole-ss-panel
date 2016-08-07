@@ -39,7 +39,7 @@ class UserController extends BaseController
         }
         $payInfo = $this->user->payInfo();
         
-        return $this->view()->assign('nextdeadline',$payInfo[3])->assign('deadline',$payInfo[0])->assign('RenewOrBuy',$payInfo[1])->assign('isServering',$payInfo[2])->assign('msg',$msg)->display('user/index.tpl');
+        return $this->view()->assign('isBuyed',$payInfo[3])->assign('nextdeadline',$payInfo[2])->assign('deadline',$payInfo[0])->assign('isServering',$payInfo[1])->assign('msg',$msg)->display('user/index.tpl');
     }
     public function buy()
     {

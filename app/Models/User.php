@@ -114,21 +114,21 @@ class User extends Model
         //if() < time() &&
         //$service_deadline = date('Y-m-d H:i:s',strtotime('+180 day',strtotime($this->user->service_deadline)));
         if($this->attributes['pay_status'] == '1'){
-            $rst[0] = $deadlineTime;
-            $rst[1] = "续费";
-            $rst[2] = true;
+            $rst[0] = $deadlineTime; //服务到期时间
+            $rst[1] = true; //服务是否在付费状态
             $nextDeadlineTime = $this->attributes['next_service_deadline'];
-            $rst[3] = $nextDeadlineTime;
+            $rst[2] = $nextDeadlineTime; //本月服务到期时间
+            $rst[3] = true; //是否购买过服务
         }else if($this->attributes['pay_status'] == '0'){
-            $rst[0] = "您还未购买过服务.";
-            $rst[1] = "购买";
-            $rst[2] = false;
-            $rst[3] = "Rio 2016";
+            $rst[0] = "Rio 2016";
+            $rst[1] = false;
+            $rst[2] = "Rio 2016";
+            $rst[3] = false;
         }else if($this->attributes['pay_status'] == '2'){
-            $rst[0] = "您的服务已经过期.";
-            $rst[1] = "续费";
-            $rst[2] = false;
-            $rst[3] = "Rio 2016";
+            $rst[0] = "Rio 2016";
+            $rst[1] = false;
+            $rst[2] = "Rio 2016";
+            $rst[3] = true;
         }
         return $rst;
     }

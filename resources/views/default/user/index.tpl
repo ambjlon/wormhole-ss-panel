@@ -50,14 +50,18 @@
                             </div>
                         </div-->
                         <dl class="dl-horizontal">
-                            <dt>您的服务到期时间:</dt>
-                            <dd>{$deadline} <a href="/user/buy" target="_blank">{$RenewOrBuy}</a></dd>
-                            {if $isServering}
-                            <dt>本月服务到期时间</dt>
-                            <dd>{$nextdeadline}</dd>
-                            <dt>本月流量使用情况</dt>
-                            <dd>{$user->getMonthTrafficPercent()} <a href="/user/buy" target="_blank">流量加油</a></dd>
-                            {/if}
+                          {if $isBuyed}
+                          {if $isServering}
+                            <dt>您的服务到期时间:</dt><dd>{$deadline} <a href="/user/buy" target="_blank">续费</a></dd>
+                            <dt>本月服务到期时间:</dt><dd>{$nextdeadline}</dd>
+                            <dt>本月流量使用情况:</dt><dd>{$user->getMonthTrafficPercent()} <a href="/user/buy" target="_blank">流量加油</a></dd>
+                          {else}
+                          <dt>您的服务已过期.</dt><dd> <a href="/user/buy" target="_blank">续费</a></dd>
+                          {/if}
+                          {else}
+                          <dt>您正在试用, 还未购买服务.</dt><dd> <a href="/user/buy" target="_blank">购买</a></dd>
+                          <dt>您的试用流量使用情况:</dt><dd> {$user->getMonthTrafficPercent()}</dd>
+                          {/if}
                             <!--dt>总流量</dt>
                             <dd>{$user->enableTraffic()}</dd>
                             <dt>已用流量</dt>
