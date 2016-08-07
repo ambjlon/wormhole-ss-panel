@@ -59,7 +59,7 @@
                           <dt>您的服务已过期.</dt><dd> <a href="/user/buy" target="_blank">续费</a></dd>
                           {/if}
                           {else}
-                          <dt>您正在试用,还未购买服务.</dt><dd> <a href="/user/buy" target="_blank">购买</a></dd>
+                          <dt>您正在试用.</dt><dd> <a href="/user/buy" target="_blank">购买服务</a></dd>
                           <dt>您的试用流量使用情况:</dt><dd> {$user->getMonthTrafficPercent()}</dd>
                           {/if}
                             <!--dt>总流量</dt>
