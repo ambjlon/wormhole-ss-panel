@@ -28,7 +28,7 @@ class Password
         }
         $subject = Config::get('appName') . "重置密码";
         $resetUrl = Config::get('baseUrl') . "/password/token/" . $pwdRst->token;
-        $body = "点击下面的链接或者将下面的链接复制到浏览器的地址栏, 完成密码的充值.\n".$resetUrl."\n此链接的有效期是一天. 请注意保密不要将此链接示人, 否则造成的账号丢失, 本站概不负责.";
+        $body = "点击下面的链接或者将下面的链接复制到浏览器的地址栏, 完成密码的重置.\n".$resetUrl."\n此链接的有效期是一天. 请注意保密不要将此链接示人, 否则造成的账号丢失, 本站概不负责.";
         try {
             if(Mail::send($email, $subject, $body)){
                 return true;
