@@ -24,7 +24,7 @@
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+    <![endif]-->    
 </head>
 <body class="skin-blue">
 <!-- Site wrapper -->
@@ -98,6 +98,12 @@
                 <li>
                     <a href="/user">
                         <i class="fa fa-dashboard"></i> <span>用户中心</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/user/buy">
+                        <i class="fa fa-money"></i> <span>购买服务</span>
                     </a>
                 </li>
 

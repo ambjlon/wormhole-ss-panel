@@ -34,12 +34,11 @@
                 <div class="box box-primary">
                     <div class="box-header">
                         <i class="fa fa-exchange"></i>
-
-                        <h3 class="box-title">流量使用情况</h3>
+                        <h3 class="box-title">账号信息</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <div class="row">
+                        <!--div class="row">
                             <div class="col-xs-12">
                                 <div class="progress progress-striped">
                                     <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40"
@@ -49,14 +48,22 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
                         <dl class="dl-horizontal">
-                            <dt>总流量</dt>
+                            <dt>您的服务到期时间:</dt>
+                            <dd>{$deadline} <a href="/user/buy" target="_blank">{$RenewOrBuy}</a></dd>
+                            {if $isServering}
+                            <dt>本月服务到期时间</dt>
+                            <dd>{$nextdeadline}</dd>
+                            <dt>本月流量使用情况</dt>
+                            <dd>{$user->getMonthTrafficPercent()} <a href="/user/buy" target="_blank">流量加油</a></dd>
+                            {/if}
+                            <!--dt>总流量</dt>
                             <dd>{$user->enableTraffic()}</dd>
                             <dt>已用流量</dt>
                             <dd>{$user->usedTraffic()}</dd>
                             <dt>剩余流量</dt>
-                            <dd>{$user->unusedTraffic()}</dd>
+                            <dd>{$user->unusedTraffic()}</dd-->
                         </dl>
                     </div>
                     <!-- /.box-body -->

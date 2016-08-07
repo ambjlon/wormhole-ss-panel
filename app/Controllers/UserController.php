@@ -37,7 +37,9 @@ class UserController extends BaseController
         if($msg == null ){
             $msg = "在后台修改用户中心公告...";
         }
-        return $this->view()->assign('msg',$msg)->display('user/index.tpl');
+        $payInfo = $this->user->payInfo();
+        
+        return $this->view()->assign('nextdeadline',$payInfo[3])->assign('deadline',$payInfo[0])->assign('RenewOrBuy',$payInfo[1])->assign('isServering',$payInfo[2])->assign('msg',$msg)->display('user/index.tpl');
     }
     public function buy()
     {
@@ -76,7 +78,7 @@ class UserController extends BaseController
         //error_log(gettype($log)."\n", 3,'/home/ss/debug.log');
         if($log == null){
             $res['ret'] = 0;
-            $res['msg'] = '卡号或密码无效!@';
+            $res['msg'] = '卡号或密码无效!';
             return $this->echoJson($response, $res);
         }
         if($passwd == $log->passwd && $log->is_consumed == 0){
@@ -143,7 +145,7 @@ class UserController extends BaseController
                     $res['msg'] = '成功购买了一年的服务, 即将跳转到用户中心...';
                     return $this->echoJson($response, $res);
                 }else{
-                    $service_deadline = date('Y-m-d H:i:s',strtotime('+360 year',strtotime($this->user->service_deadline)));
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+360 days',strtotime($this->user->service_deadline)));
                     $this->user->service_deadline = $service_deadline;
                     $this->user->save();
                     $log->is_consumed = 1;

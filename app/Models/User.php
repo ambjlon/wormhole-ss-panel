@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+date_default_timezone_set('Asia/Shanghai');
 /**
  * User Model
  */
@@ -109,7 +109,37 @@ class User extends Model
         $percent = $percent * 100;
         return $percent;
     }
+    public function payInfo(){
+        $deadlineTime = $this->attributes['service_deadline'];
+        //if() < time() &&
+        //$service_deadline = date('Y-m-d H:i:s',strtotime('+180 day',strtotime($this->user->service_deadline)));
+        if($this->attributes['pay_status'] == '1'){
+            $rst[0] = $deadlineTime;
+            $rst[1] = "续费";
+            $rst[2] = true;
+            $nextDeadlineTime = $this->attributes['next_service_deadline'];
+            $rst[3] = $nextDeadlineTime;
+        }else if($this->attributes['pay_status'] == '0'){
+            $rst[0] = "您还未购买过服务.";
+            $rst[1] = "购买";
+            $rst[2] = false;
+            $rst[3] = "Rio 2016";
+        }else if($this->attributes['pay_status'] == '2'){
+            $rst[0] = "您的服务已经过期.";
+            $rst[1] = "续费";
+            $rst[2] = false;
+            $rst[3] = "Rio 2016";
+        }
+        return $rst;
+    }
 
+    public function getMonthTrafficPercent(){
+        
+        $d = $this->attributes['d'];
+        $transfer_enable = $this->attributes['transfer_enable'];
+        return Tools::flowAutoShow($d)."/".Tools::flowAutoShow($transfer_enable);
+    }
+    
     public function enableTraffic()
     {
         $transfer_enable = $this->attributes['transfer_enable'];

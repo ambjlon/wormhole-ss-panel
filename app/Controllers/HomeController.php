@@ -51,6 +51,9 @@ class HomeController extends BaseController
         $donation = Donation::orderBy('amount', 'desc')->get();
         return $this->view()->assign('donation',$donation)->display('donationboard.tpl');
     }
+    public function buyinstructor(){
+        return $this->view()->assign('donation',$donation)->display('buyinstructor.tpl');
+    }
     //这个函数本来是提供文件下载服务的, 但是在safarai浏览器上下载的东西总是带有.html后缀, 估计是nginx把下面的http设置重写了.
     //所以直接使用nginx提供文件下载服务.
     public function download(){
