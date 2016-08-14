@@ -48,7 +48,7 @@ class UserController extends BaseController
 
     public function handleBuy($request, $response, $args)
     {
-        $uid = $this->user->uid;
+        $uid = $this->user->id;
         //充值接口访问频次限制
         $key = 'ACCESS_BUY_'.$uid;
         $nowtime = time();
@@ -96,7 +96,7 @@ class UserController extends BaseController
                     $res['ret'] = 1;
                     $res['msg'] = '加油包充值成功, 本月流量增加了50G, 即将跳转到用户中心...';
                     $nowtime = time();
-                    error_log('', 3,'/home/ss/accounts/'.$this->user->uid.'_'.$nowtime.'_'.$amount.'.log');
+                    error_log('', 3,'/home/ss/accounts/'.$uid.'_'.$nowtime.'_'.$amount.'.log');
                     return $this->echoJson($response, $res);
                 }
             }else if($amount == 30){
@@ -118,7 +118,7 @@ class UserController extends BaseController
                     $res['ret'] = 1;
                     $res['msg'] = '成功购买了半年的服务, 即将跳转到用户中心...';
                     $nowtime = time();
-                    error_log('', 3,'/home/ss/accounts/'.$this->user->uid.'_'.$nowtime.'_'.$amount.'.log');
+                    error_log('', 3,'/home/ss/accounts/'.$uid.'_'.$nowtime.'_'.$amount.'.log');
                     return $this->echoJson($response, $res);
                 }else{
                     $service_deadline = date('Y-m-d H:i:s',strtotime('+180 day',strtotime($this->user->service_deadline)));
@@ -129,7 +129,7 @@ class UserController extends BaseController
                     $res['ret'] = 1;
                     $res['msg'] = '成功购买了半年的服务, 即将跳转到用户中心...';
                     $nowtime = time();
-                    error_log('', 3,'/home/ss/accounts/'.$this->user->uid.'_'.$nowtime.'_'.$amount.'.log');
+                    error_log('', 3,'/home/ss/accounts/'.$uid.'_'.$nowtime.'_'.$amount.'.log');
                     return $this->echoJson($response, $res);
                 }
             }else if($amount == 45){
@@ -150,7 +150,7 @@ class UserController extends BaseController
                     $res['ret'] = 1;
                     $res['msg'] = '成功购买了一年的服务, 即将跳转到用户中心...';
                     $nowtime = time();
-                    error_log('', 3,'/home/ss/accounts/'.$this->user->uid.'_'.$nowtime.'_'.$amount.'.log');
+                    error_log('', 3,'/home/ss/accounts/'.$uid.'_'.$nowtime.'_'.$amount.'.log');
                     return $this->echoJson($response, $res);
                 }else{
                     $service_deadline = date('Y-m-d H:i:s',strtotime('+360 days',strtotime($this->user->service_deadline)));
@@ -161,7 +161,7 @@ class UserController extends BaseController
                     $res['ret'] = 1;
                     $res['msg'] = '成功购买了一年的服务, 即将跳转到用户中心...';
                     $nowtime = time();
-                    error_log('', 3,'/home/ss/accounts/'.$this->user->uid.'_'.$nowtime.'_'.$amount.'.log');
+                    error_log('', 3,'/home/ss/accounts/'.$uid.'_'.$nowtime.'_'.$amount.'.log');
                     return $this->echoJson($response, $res);
                 }
             }
