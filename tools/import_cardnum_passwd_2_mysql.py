@@ -10,7 +10,7 @@ line = pf.readline()
 while line:
     cardnum = line.split(' ')[0]
     passwd = line.split(' ')[1]
-    sql = 'insert into cardnum_passwd (cardnum, passwd, amount, is_consumed) vales(' + cardnum + ',' + passwd + '30, 0 )';
+    sql = 'insert into cardnum_passwd (cardnum, passwd, amount, is_consumed) values("' + cardnum + '", "' + passwd + '", 31, 0 )';
     cursor.execute(sql)
     db.commit()
     line = pf.readline()
