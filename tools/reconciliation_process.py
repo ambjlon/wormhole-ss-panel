@@ -6,8 +6,8 @@ import MySQLdb
 
 cntz = pytz.timezone('Asia/Shanghai')
 today = datetime.now(cntz).strftime('%Y%m%d')
-log_file = open('/home/ss/reconciliation_' + today + '.log', "w")
-db = MySQLdb.connect("localhost","root","","shadowsocks")
+log_file = open('/home/ss/reconciliation/reconciliation_' + today + '.log', "w")
+db = MySQLdb.connect(host="localhost",user="root",passwd="***",port=***,db="shadowsocks")
 cursor = db.cursor()
 
 def process_log(log):
