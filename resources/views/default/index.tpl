@@ -20,7 +20,7 @@
 
 <div class="container">
   <div class="alert alert-success">
-    最新动态：wormhole开始免费提供服务了!!! qq交流群431706930
+    最新动态：2016年8月16日起, wormholevpn开始进行收费管理了, 详情见<a href="/user">用户中心</a>公告!
   </div>
 
   <div class="row">
