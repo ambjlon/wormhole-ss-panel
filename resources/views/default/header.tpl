@@ -30,7 +30,7 @@
           <ul class="nav navbar-nav">
             <li ><a href="/">首页</a></li>
             <li><a href="/usage">使用教程</a></li>
-            <!--li><a href="/code">邀请码</a></li-->
+            <li><a href="/code">邀请码</a></li>
             <!--li><a href="/donation">捐赠</a></li  打开次链接便可以发起捐赠-->
             <li><a href="/user/buy">购买</a></li>
             {if $user->isLogin}

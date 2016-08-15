@@ -22,7 +22,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        {$msg}
+                       <pre>{$msg}</pre>
                     </div>
                     <!-- /.box-body -->
                 </div>
