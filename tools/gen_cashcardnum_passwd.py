@@ -32,6 +32,7 @@ def gen_cashcardnum_passwd(num=400):
     file_obj_month = open('cardnum_passwd_'+ today + '_month.txt', 'w')
     file_obj_halfyear = open('cardnum_passwd_'+ today + '_halfyear.txt', 'w')
     file_obj_year = open('cardnum_passwd_'+ today + '_year.txt', 'w')
+    file_obj_monpay = open('cardnum_passwd_'+ today + '_monpay.txt', 'w')
     i = 0
     for key in rst:
         if i >=0 and i<=499:
@@ -40,10 +41,13 @@ def gen_cashcardnum_passwd(num=400):
             file_obj_halfyear.write( key + ' ' + rst[key] + '\n')
         if i >= 1000 and i <= 1499:
             file_obj_year.write( key + ' ' + rst[key] + '\n')
+        if i >= 1500 and i <= 1999:
+            file_obj_monpay.write( key + ' ' + rst[key] + '\n')
         i = i + 1
     file_obj_month.close()
     file_obj_halfyear.close()
     file_obj_year.close()
+    file_obj_monpay.close()
 
 if __name__=="__main__":
-    gen_cashcardnum_passwd(1500)
+    gen_cashcardnum_passwd(2000)
