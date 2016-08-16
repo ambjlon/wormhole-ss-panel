@@ -85,6 +85,38 @@ class UserController extends BaseController
             $amount = $log->amount;
             if($amount == 6){
                 if($this->user->pay_status == 0 || $this->user->pay_status == 2){
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+30 day'));
+                    $next_service_deadline = date('Y-m-d H:i:s',strtotime('+30 day'));
+                    $purchase_time = date('Y-m-d H:i:s',time());
+                    $this->user->service_deadline = $service_deadline;
+                    $this->user->purchase_time = $purchase_time;
+                    $this->user->next_service_deadline = $next_service_deadline;
+                    $this->user->d = 0;
+                    $this->user->u = 0;
+                    $this->user->transfer_enable = 53687091200;
+                    $this->user->pay_status = 1;
+                    $this->user->save();
+                    $log->is_consumed = 1;
+                    $log->save();
+                    $res['ret'] = 1;
+                    $res['msg'] = '成功购买了一个月的服务, 即将跳转到用户中心...';
+                    $nowtime = time();
+                    error_log('', 3,'/home/ss/accounts/'.$uid.'_'.$nowtime.'_'.$amount.'.log');
+                    return $this->echoJson($response, $res);
+                }else{
+                    $service_deadline = date('Y-m-d H:i:s',strtotime('+30 day',strtotime($this->user->service_deadline)));
+                    $this->user->service_deadline = $service_deadline;
+                    $this->user->save();
+                    $log->is_consumed = 1;
+                    $log->save();
+                    $res['ret'] = 1;
+                    $res['msg'] = '成功购买了一个月的服务, 即将跳转到用户中心...';
+                    $nowtime = time();
+                    error_log('', 3,'/home/ss/accounts/'.$uid.'_'.$nowtime.'_'.$amount.'.log');
+                    return $this->echoJson($response, $res);
+                }
+            }else if($amount == 8){
+                if($this->user->pay_status == 0 || $this->user->pay_status == 2){
                     $res['ret'] = 0;
                     $res['msg'] = '你还未购买服务, 不能使用加油包, 请先购买服务!';
                     return $this->echoJson($response, $res);

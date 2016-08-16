@@ -6,9 +6,10 @@
   <section class="content">
     <h4>收费标准:</h4>
     <ul>
-      <li>年付45元/年. 月流量50G, 本月剩余流量月底自动清零不计入下月.</li>
+      <li>月付6元/月. 月流量50G, 本月剩余流量月底自动清零不计入下月.</li>
       <li>半年付30元/半年. 月流量50G, 本月剩余流量月底自动清零不计入下月.</li>
-      <li>流量加油包: 6元/月. <strong><font color="#FF0000">请注意, 使用流量加油包的前提是您已经进行了年付或半年付.</font></strong> 流量加油包在当月流量不足的情况下使用, 流量加油包产生的流量月底自动清零不计入下月.</li>
+      <li>年付45元/年. 月流量50G, 本月剩余流量月底自动清零不计入下月.</li>
+      <li>流量加油包: 8元/月. <strong><font color="#FF0000">请注意, 使用流量加油包的前提是您已经进行了年付或半年付或月付.</font></strong> 流量加油包在当月流量不足的情况下使用, 流量加油包产生的流量月底自动清零不计入下月.</li>
     </ul>
     <p>备注:绝大多数情况下流量加油包是用不到的, 因为一个月50G的流量对任何用户来说已经足够了.</p>
     <!--ol>
@@ -33,9 +34,10 @@
     </br><p>购买分为两个步骤: 首先在云发卡平台购买本站的代金卡及其密码, 然后使用您购买的卡号密码在本站充值完成购买. 您可以参考详细的<a href="/buyinstructor" target="_blank">购买说明.</a></p>
     <p>一. 购买代金卡</p>
     <ul>
+      <li><a href="http://www.yunfaka.com/product/CB4A85690275FF90" target="_blank">购买月付代金卡及其密码</a></li>
       <li><a href="http://www.yunfaka.com/product/AE8594E30FC30E0C" target="_blank">购买半年付代金卡及其密码</a></li>
       <li><a href="http://www.yunfaka.com/product/5B211084E99625F1" target="_blank">购买年付代金卡及其密码</a></li>
-      <li><a href="http://www.yunfaka.com/product/CB4A85690275FF90" target="_blank">购买流量加油包代金卡及其密码</a></li>
+      <li><a href="http://www.yunfaka.com/product/5B211084E99625F1" target="_blank">购买流量加油包代金卡及其密码</a></li>
     </ul>
     <p>二. 使用代金卡充值</p>
     <div class="login-box-body">
