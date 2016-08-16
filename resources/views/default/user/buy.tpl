@@ -70,26 +70,26 @@
           <p>微信扫码</p>
   <ul id="myTab1" class="nav nav-tabs">
     <li class="active"><a href="#wxyuan6" data-toggle="tab">月付￥6</a></li>
-    <li class="active"><a href="#wxyuan30" data-toggle="tab">半年付￥30</a></li>
+    <li><a href="#wxyuan30" data-toggle="tab">半年付￥30</a></li>
     <li><a href="#wxyuan45" data-toggle="tab">一年付￥45</a></li>
     <li><a href="#wxyuan8" data-toggle="tab">流量加油包￥8</a></li>
   </ul>
   <div id="myTab1Content" class="tab-content">
     <div class="tab-pane fade in active" id="wxyuan6"><img src="/myimages/weixin6.jpg" height="422" width="320"/></div>
-    <div class="tab-pane fade in active" id="wxyuan30"><img src="/myimages/weixin30.jpg" height="422" width="320"/></div>
+    <div class="tab-pane fade" id="wxyuan30"><img src="/myimages/weixin30.jpg" height="422" width="320"/></div>
     <div class="tab-pane fade" id="wxyuan45"><img src="/myimages/weixin45.jpg" height="422" width="320"/></div>
     <div class="tab-pane fade" id="wxyuan8"><img src="/myimages/weixin8.jpg" height="422" width="320"/></div>
   </div>
             <p>支付宝扫码</p>
   <ul id="myTab2" class="nav nav-tabs">
     <li class="active"><a href="#aliyuan6" data-toggle="tab">月付￥6</a></li>
-    <li class="active"><a href="#aliyuan30" data-toggle="tab">半年付￥30</a></li>
+    <li><a href="#aliyuan30" data-toggle="tab">半年付￥30</a></li>
     <li><a href="#aliyuan45" data-toggle="tab">一年付￥45</a></li>
     <li><a href="#aliyuan8" data-toggle="tab">流量加油包￥8</a></li>
   </ul>
   <div id="myTab2Content" class="tab-content">
     <div class="tab-pane fade in active" id="aliyuan6"><img src="/myimages/alipay6.jpg" height="422" width="320"/></div>
-    <div class="tab-pane fade in active" id="aliyuan30"><img src="/myimages/alipay30.jpg" height="422" width="320"/></div>
+    <div class="tab-pane fade" id="aliyuan30"><img src="/myimages/alipay30.jpg" height="422" width="320"/></div>
     <div class="tab-pane fade" id="aliyuan45"><img src="/myimages/alipay45.jpg" height="422" width="320"/></div>
     <div class="tab-pane fade" id="aliyuan8"><img src="/myimages/alipay8.jpg" height="422" width="320"/></div>
   </div>
