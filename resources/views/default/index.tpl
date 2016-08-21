@@ -20,7 +20,7 @@
 
 <div class="container">
   <div class="alert alert-success">
-    最新动态：2016年8月16日起, wormholevpn开始进行收费管理了, 详情见<a href="/user">用户中心</a>公告!
+    最新动态：2016年8月16日起, wormholevpn开始进行收费管理了, 详情见<a href="/user">用户中心</a>公告! 或者联系管理员(qq695764872).
   </div>
 
   <div class="row">
