@@ -200,4 +200,17 @@ CREATE TABLE `cardnum_passwd` (
   `is_consumed` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`cardnum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- pay_log 存放用户的购买记录
+-- insert into pay_log (user_id, pay_time, amount, pay_type, pay_way) values( , , , , );
+DROP TABLE IF EXISTS `pay_log`;
+CREATE TABLE `pay_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `pay_time` timestamp(14) NOT NULL,
+  `amount` float(6,2) NOT NULL,
+  `pay_type` varchar(31)  CHARACTER SET utf8 NOT NULL, -- A套餐/月付 B套餐/年付等等
+  `pay_way` varchar(32) NOT NULL, -- 微信扫码/支付宝扫码(扫码)/代金卡
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
