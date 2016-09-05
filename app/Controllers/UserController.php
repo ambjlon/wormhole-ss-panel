@@ -2,6 +2,7 @@
 namespace App\Controllers;
 date_default_timezone_set('Asia/Shanghai');
 
+use App\Models\PayLog;
 use App\Models\InviteCode;
 use App\Services\Auth;
 use App\Models\Node, App\Models\TrafficLog, App\Models\CheckInLog, App\Models\CardnumPasswd;
@@ -45,7 +46,11 @@ class UserController extends BaseController
     {
         return $this->view()->display('user/buy.tpl');
     }
-
+    public function payLog(){
+        $uid = $this->user->id;
+        $logs = PayLog::where('user_id', $uid)->orderBy('pay_time')->get();
+        return $this->view()->assign('logs',$logs)->display('user/paylog.tpl');
+    }
     public function handleBuy($request, $response, $args)
     {
         $uid = $this->user->id;
