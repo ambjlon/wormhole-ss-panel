@@ -70,6 +70,7 @@ $app->group('/user', function () {
     $this->get('/logout', 'App\Controllers\UserController:logout');
     $this->get('/buy', 'App\Controllers\UserController:buy');
     $this->post('/buy', 'App\Controllers\UserController:handleBuy');
+    $this->post('/paylog', 'App\Controllers\UserController:payLog');
 })->add(new Auth());
 
 
