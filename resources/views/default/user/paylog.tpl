@@ -1,5 +1,6 @@
 {include file='user/main.tpl'}
 
+<div class="content-wrapper">
   <section class="content-header">
     <h1> 购买记录</h1>
   </section>
@@ -32,5 +33,7 @@
 {/if}
 
 </section>
+
+</div>
 
 {include file='user/footer.tpl'}
