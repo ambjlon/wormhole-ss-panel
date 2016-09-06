@@ -69,13 +69,13 @@
             </div>
 
             <div class="col-md-6">
-                <div class="callout callout-warning">
+                <!--div class="callout callout-warning">
                     <h4>注意！</h4>
 
                     <p>邀请码请给认识的需要的人。</p>
 
                     <p>邀请有记录，若被邀请的人违反用户协议，您将会有连带责任。</p>
-                </div>
+                </div-->
 
                 <div class="callout callout-info">
                     <h4>说明</h4>

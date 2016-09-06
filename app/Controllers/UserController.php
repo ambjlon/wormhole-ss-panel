@@ -2,6 +2,7 @@
 namespace App\Controllers;
 date_default_timezone_set('Asia/Shanghai');
 
+use App\Models\User;
 use App\Models\PayLog;
 use App\Models\InviteCode;
 use App\Services\Auth;
@@ -59,6 +60,7 @@ class UserController extends BaseController
     public function handleBuy($request, $response, $args)
     {
         $uid = $this->user->id;
+        $ref_by = $this->user->ref_by;
         //充值接口访问频次限制
         $key = 'ACCESS_BUY_'.$uid;
         $nowtime = time();
@@ -422,5 +424,29 @@ class UserController extends BaseController
         $payLog->pay_type = $payType;
         $payLog->pay_way = $payWay;
         $payLog->save();
+    }
+    private function rewardReference($ref_by){
+        $user =  User::find($ref_by);
+        $uid = $user->id;
+        if($user->pay_status == 0 || $user->pay_status == 2){
+            $service_deadline = date('Y-m-d H:i:s',strtotime('+30 day'));
+            $next_service_deadline = date('Y-m-d H:i:s',strtotime('+30 day'));
+            $purchase_time = date('Y-m-d H:i:s',time());
+            $user->service_deadline = $service_deadline;
+            $user->purchase_time = $purchase_time;
+            $user->next_service_deadline = $next_service_deadline;
+            $user->d = 0;
+            $user->u = 0;
+            $user->transfer_enable = 53687091200;
+            $user->pay_status = 1; 
+            $user->save();
+            $this->writePaylogTable($uid, $purchase_time, 0, '月付', '推荐奖励');
+        }else{
+            $service_deadline = date('Y-m-d H:i:s',strtotime('+30 day',strtotime($this->user->service_deadline)));
+            $user->service_deadline = $service_deadline;
+            $user->save();
+            $purchase_time = date('Y-m-d H:i:s',time());
+            $this->writePaylogTable($uid, $purchase_time, 0, '月付', '推荐奖励');
+        }
     }
 }
