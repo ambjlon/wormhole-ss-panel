@@ -108,6 +108,13 @@
                 </li>
 
                 <li>
+                    <a href="/user/paylog">
+                        <i class="fa fa-table"></i> <span>购买记录</span>
+                    </a>
+                </li>
+
+                
+                <li>
                     <a href="/user/node">
                         <i class="fa fa-sitemap"></i> <span>节点列表</span>
                     </a>

@@ -49,7 +49,12 @@ class UserController extends BaseController
     public function payLog(){
         $uid = $this->user->id;
         $logs = PayLog::where('user_id', $uid)->orderBy('pay_time')->get();
-        return $this->view()->assign('logs',$logs)->display('user/paylog.tpl');
+        if($logs){
+            $isPay = true;
+        }else{
+            $isPay = false;
+        }
+        return $this->view()->assign('isPay',$isPay)->assign('logs',$logs)->display('user/paylog.tpl');
     }
     public function handleBuy($request, $response, $args)
     {
