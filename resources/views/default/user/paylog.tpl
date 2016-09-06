@@ -8,15 +8,13 @@
 <section class="content">
 
 {if $isPay}
-
+<table class="table">
     <tr>
       <th>购买时间</th>
       <th>支付金额</th>
       <th>服务类型</th>
       <th>支付方式</th>
     </tr>
-
-
     {foreach $logs as $log}
     <tr>
       <td>{$log->pay_time}</td>
@@ -25,9 +23,7 @@
       <td>{$log->pay_way}</td>
     </tr>
     {/foreach}
-
-
-
+</table>
 {else}
    <p>您还未购买过服务, 点击<a href="/user/buy">这里</a>前往购买.</p>
 {/if}
