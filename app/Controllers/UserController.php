@@ -49,7 +49,7 @@ class UserController extends BaseController
     public function payLog(){
         $uid = $this->user->id;
         $logs = PayLog::where('user_id', $uid)->orderBy('pay_time')->get();
-        if($logs){
+        if(count($logs) > 0){
             $isPay = true;
         }else{
             $isPay = false;
