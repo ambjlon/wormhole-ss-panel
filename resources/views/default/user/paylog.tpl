@@ -1,4 +1,4 @@
-{include file='header.tpl'}
+{include file='main.tpl'}
 
   <section class="content-header">
     <h1> 购买记录</h1>
