@@ -1,4 +1,4 @@
-{include file='main.tpl'}
+{include file='user/main.tpl'}
 
   <section class="content-header">
     <h1> 购买记录</h1>
@@ -33,4 +33,4 @@
 
 </section>
 
-{include file='footer.tpl'}
+{include file='user/footer.tpl'}
