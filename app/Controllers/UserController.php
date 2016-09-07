@@ -473,7 +473,7 @@ class UserController extends BaseController
             $user->save();
             $this->writePaylogTable($uid, $purchase_time, 0, '月付', '推荐奖励');
         }else{
-            $service_deadline = date('Y-m-d H:i:s',strtotime('+30 day',strtotime($this->user->service_deadline)));
+            $service_deadline = date('Y-m-d H:i:s',strtotime('+30 day',strtotime($user->service_deadline)));
             $user->service_deadline = $service_deadline;
             $user->save();
             $purchase_time = date('Y-m-d H:i:s',time());
