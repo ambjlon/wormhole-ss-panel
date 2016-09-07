@@ -107,6 +107,10 @@ class UserController extends BaseController
                     $this->user->u = 0;
                     $this->user->transfer_enable = 53687091200;
                     $this->user->pay_status = 1;
+                    if($this->user->reward == 1){
+                        $this->rewardReference($ref_by);
+                        $this->user->reward = 0;
+                    }
                     $this->user->save();
                     $log->is_consumed = 1;
                     $log->save();
@@ -119,6 +123,10 @@ class UserController extends BaseController
                 }else{
                     $service_deadline = date('Y-m-d H:i:s',strtotime('+30 day',strtotime($this->user->service_deadline)));
                     $this->user->service_deadline = $service_deadline;
+                    if($this->user->reward == 1){
+                        $this->rewardReference($ref_by);
+                        $this->user->reward = 0;
+                    }
                     $this->user->save();
                     $log->is_consumed = 1;
                     $log->save();
@@ -137,6 +145,10 @@ class UserController extends BaseController
                     return $this->echoJson($response, $res);
                 }else{
                     $this->user->transfer_enable += 53687091200;
+                    if($this->user->reward == 1){
+                        $this->rewardReference($ref_by);
+                        $this->user->reward = 0;
+                    }
                     $this->user->save();
                     $log->is_consumed = 1;
                     $log->save();
@@ -161,6 +173,10 @@ class UserController extends BaseController
                     $this->user->u =0;
                     $this->user->transfer_enable = 53687091200;
                     $this->user->pay_status = 1;
+                    if($this->user->reward == 1){
+                        $this->rewardReference($ref_by);
+                        $this->user->reward = 0;
+                    }
                     $this->user->save();
                     $log->is_consumed = 1;
                     $log->save();
@@ -173,6 +189,10 @@ class UserController extends BaseController
                 }else{
                     $service_deadline = date('Y-m-d H:i:s',strtotime('+180 day',strtotime($this->user->service_deadline)));
                     $this->user->service_deadline = $service_deadline;
+                    if($this->user->reward == 1){
+                        $this->rewardReference($ref_by);
+                        $this->user->reward = 0;
+                    }
                     $this->user->save();
                     $log->is_consumed = 1;
                     $log->save();
@@ -196,6 +216,10 @@ class UserController extends BaseController
                     $this->user->u =0;
                     $this->user->transfer_enable = 53687091200;
                     $this->user->pay_status = 1;
+                    if($this->user->reward == 1){
+                        $this->rewardReference($ref_by);
+                        $this->user->reward = 0;
+                    }
                     $this->user->save();
                     $log->is_consumed = 1;
                     $log->save();
@@ -208,6 +232,10 @@ class UserController extends BaseController
                 }else{
                     $service_deadline = date('Y-m-d H:i:s',strtotime('+360 days',strtotime($this->user->service_deadline)));
                     $this->user->service_deadline = $service_deadline;
+                    if($this->user->reward == 1){
+                        $this->rewardReference($ref_by);
+                        $this->user->reward = 0;
+                    }
                     $this->user->save();
                     $log->is_consumed = 1;
                     $log->save();

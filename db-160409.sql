@@ -107,6 +107,7 @@ CREATE TABLE `ss_password_reset` (
 --alter table user add column service_deadline timestamp not null default '1987-09-06 11:00:00';
 --alter table user add column next_service_deadline timestamp not null default '1987-09-06 11:00:00';
 --alter table user add column purchase_time timestamp not null default '2036-09-06 11:00:00';
+--alter table user add column reward tinyint(4) not null default '0';
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -138,6 +139,7 @@ CREATE TABLE `user` (
   `service_deadline` timestamp NOT NULL DEFAULT '1987-09-06 11:00:00', --服务截止时间
   `next_service_deadline` timestamp NOT NULL DEFAULT '1987-09-06 11:00:00', --本月服务截止时间
   `purchase_time` timestamp NOT NULL DEFAULT '2036-09-06 11:00:00', --服务购买时间
+  `reward` tinyint(4) NOT NULL DEFAULT '0', --表示该用户的推荐者能否获得奖励, 0:不可以 1:可以
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `port` (`port`)

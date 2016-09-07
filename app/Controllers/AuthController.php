@@ -138,7 +138,9 @@ class AuthController extends BaseController
         $user->invite_num = Config::get('inviteNum');
         $user->reg_ip = Http::getClientIP();
         $user->ref_by = $c->user_id;
+        $user->reward = 1;
         $user->qq = $qq;
+
 
         if ($user->save()) {
             $res['ret'] = 1;
