@@ -455,6 +455,9 @@ class UserController extends BaseController
     }
     private function rewardReference($ref_by){
         $user =  User::find($ref_by);
+        if($user == NULL){
+            return;
+        }
         $uid = $user->id;
         if($user->pay_status == 0 || $user->pay_status == 2){
             $service_deadline = date('Y-m-d H:i:s',strtotime('+30 day'));
