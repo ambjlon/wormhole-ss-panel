@@ -35,11 +35,7 @@
                                         <img src="../assets/public/img/iconfont-server.png" alt="Server Node">
                                     </div>
                                     <div class="product-info">
-                                        <a href="./node/{$node->id}" class="product-title">{$node->name} <span
-                                                    class="label label-info pull-right">{$node->status}</span></a>
-                                        <p>
-                                            {$node->info}
-                                        </p>
+                                      {$node->name} <span class="label label-info pull-right">{$node->status}</span>
                                     </div>
                                 </li><!-- /.item -->
                             </ul>
