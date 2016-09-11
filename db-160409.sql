@@ -36,6 +36,7 @@ CREATE TABLE `ss_invite_code` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+--alter table ss_node add column pay_status varchar(127) not null default '0';
 DROP TABLE IF EXISTS `ss_node`;
 CREATE TABLE `ss_node` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -49,6 +50,7 @@ CREATE TABLE `ss_node` (
   `status` varchar(128) NOT NULL,
   `offset` int(11) NOT NULL DEFAULT '0',
   `sort` int(3) NOT NULL,
+  `pay_status` varchar(127) NOT NULL DEFAULT '0',--表示为哪类用户服务
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
