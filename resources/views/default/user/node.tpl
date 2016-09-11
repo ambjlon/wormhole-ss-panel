@@ -56,9 +56,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <ul class="nav nav-stacked">
-                                        <li><a href="./node/{$node->id}">流量比例 <span
-                                                        class="pull-right badge bg-blue">{$node->traffic_rate}</span></a>
-                                        </li>
+                                        <li>流量比例 <span class="pull-right badge bg-blue">{$node->traffic_rate}</span></li>
                                         <li>在线人数 <span class="pull-right badge bg-aqua">{$node->getOnlineUserCount()}</span></li>
                                         <li>产生流量 <span class="pull-right badge bg-green">{$node->getNodeTrafficLoad()}</span></li>
                                         <li><a href="./node/{$node->id}"><!--Uptime-->配置详情 <!--span   
