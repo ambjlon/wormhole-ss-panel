@@ -269,15 +269,16 @@ class UserController extends BaseController
         foreach($nodes as $node){
             $node->tmpSort = $node->getOnlineUserCount();
         }
-        uasort($nodes,array('UserController', "selfDefCmp"));
+        //uasort($nodes,array('UserController', "selfDefCmp"));
+        $nodes->sortBy('tmpSort');
         return $this->view()->assign('nodes', $nodes)->assign('user', $user)->assign('msg',$msg)->display('user/node.tpl');
     }
-    private function selfDefCmp($x, $y){
-        if($x->tmpSort == $y->tmpSort){
-            return 0;
-        }
-        return ($x->tmpSort < $y->tmpSort)? -1 : 1;
-    }
+    // private function selfDefCmp($x, $y){
+    //     if($x->tmpSort == $y->tmpSort){
+    //         return 0;
+    //     }
+    //     return ($x->tmpSort < $y->tmpSort)? -1 : 1;
+    // }
 
     public function nodeInfo($request, $response, $args)
     {
