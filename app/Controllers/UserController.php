@@ -270,7 +270,7 @@ class UserController extends BaseController
             $node->tmpSort = $node->getOnlineUserCount();
         }
         //uasort($nodes,array('UserController', "selfDefCmp"));
-        $nodes->sortBy('tmpSort');
+        $nodes = $nodes->sortBy('tmpSort');
         return $this->view()->assign('nodes', $nodes)->assign('user', $user)->assign('msg',$msg)->display('user/node.tpl');
     }
     // private function selfDefCmp($x, $y){
