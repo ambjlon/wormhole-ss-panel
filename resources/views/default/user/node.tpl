@@ -42,7 +42,7 @@
                                         已付费可用
                                         {else}
                                         {if $node->pay_status == "1"}
-                                        未付费不可用,<a href="/user/buy">购买</a>
+                                        未付费不可用/<a href="/user/buy">购买</a>
                                         {else}
                                         免费节点可用
                                         {/if}
