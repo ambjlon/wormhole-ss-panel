@@ -264,10 +264,21 @@ class UserController extends BaseController
         //nodeload是通过在Node类中定义一个getNodeloadAttribute函数实现的"属性".
         //nodeload只能用在sortBy后面
         //参考http://laravel.io/forum/02-10-2014-orderby-with-my-custom-attributes
-        $nodes = Node::where('type', 1)->orderBy('sort')->get()->sortBy('nodeload');
+        //$nodes = Node::where('type', 1)->orderBy('sort')->get()->sortBy('nodeload');
+        $nodes = Node::where('type', 1)->get();
+        foreach($nodes as $node){
+            $node->tmpSort = $node->getOnlineUserCount();
+        }
+        //uasort($nodes,array('UserController', "selfDefCmp"));
+        $nodes = $nodes->sortBy('tmpSort');
         return $this->view()->assign('nodes', $nodes)->assign('user', $user)->assign('msg',$msg)->display('user/node.tpl');
     }
-
+    // private function selfDefCmp($x, $y){
+    //     if($x->tmpSort == $y->tmpSort){
+    //         return 0;
+    //     }
+    //     return ($x->tmpSort < $y->tmpSort)? -1 : 1;
+    // }
 
     public function nodeInfo($request, $response, $args)
     {

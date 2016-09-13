@@ -36,6 +36,7 @@ CREATE TABLE `ss_invite_code` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+--alter table ss_node add column pay_status varchar(127) not null default '0';
 DROP TABLE IF EXISTS `ss_node`;
 CREATE TABLE `ss_node` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -49,6 +50,7 @@ CREATE TABLE `ss_node` (
   `status` varchar(128) NOT NULL,
   `offset` int(11) NOT NULL DEFAULT '0',
   `sort` int(3) NOT NULL,
+  `pay_status` varchar(127) NOT NULL DEFAULT '0',--表示为哪类用户服务
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -188,7 +190,7 @@ CREATE TABLE `donation` (
   `user_name` varchar(128) CHARACTER SET utf8 NOT NULL,
   `email` varchar(32) NOT NULL,
   `amount` float(6,2) NOT NULL,
-  `donation_time` timestamp(14) NOT NULL,
+  `donation_time` timestamp(14) NOT NULL DEFAULT '1987-09-06 11:00:01',
   `pay_way` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
@@ -206,11 +208,12 @@ CREATE TABLE `cardnum_passwd` (
 
 -- pay_log 存放用户的购买记录
 -- insert into pay_log (user_id, pay_time, amount, pay_type, pay_way) values( , , , , );
+-- alter table pay_log modify pay_time timestamp(14) NOT NULL DEFAULT '1987-09-06 11:01:00';
 DROP TABLE IF EXISTS `pay_log`;
 CREATE TABLE `pay_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `pay_time` timestamp(14) NOT NULL,
+  `pay_time` timestamp(14) NOT NULL DEFAULT '1987-09-06 11:00:01',
   `amount` float(6,2) NOT NULL,
   `pay_type` varchar(31)  CHARACTER SET utf8 NOT NULL, -- A套餐/月付 B套餐/年付等等
   `pay_way` varchar(32) NOT NULL, -- 微信扫码/支付宝扫码(扫码)/代金卡

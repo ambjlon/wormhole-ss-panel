@@ -12,7 +12,7 @@ class Node extends Model
 
 {
     protected $table = "ss_node";
-
+    public $tmpSort;
 
     public function getLastNodeInfoLog()
     {
