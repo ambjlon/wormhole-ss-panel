@@ -120,11 +120,11 @@
                     </a>
                 </li>
 
-                <li>
+                <!--li>
                     <a href="/user/profile">
                         <i class="fa fa-user"></i> <span>我的信息</span>
                     </a>
-                </li>
+                </li-->
 
                 <li>
                     <a href="/user/trafficlog">
