@@ -22,8 +22,7 @@
 <hr/>
 
 <div class="divcss5-b">
-  <h3>详细教程</h3>
-  
+  <h3>详细教程</h3>  
   <ul id="myTab" class="nav nav-tabs">
     <li class="active"><a href="#windows" data-toggle="tab">Windows客户端设置</a></li>
     <li><a href="#mac" data-toggle="tab">设置Mac</a></li>
@@ -33,9 +32,7 @@
   </ul>
 
   <div id="myTabContent" class="tab-content">
-
     <div class="tab-pane fade in active" id="windows">
-      <p><strong>Windows客户端设置</strong></p>
       <p class="text-danger">注：如果你的系统安装了360或同类的国产“安全”软件，可能会导致客户端无法正常运行，请先将其关闭或卸载。</p>
       <p>1. 将下载下来的压缩文件解压缩到某文件夹下，运行解压缩出来的Shadowsocks.exe。此程序无需安装, 以后每次使用直接点击这个解压出来的.exe程序即可. 点击该程序后会在程序所在的同级目录生成一个json配置文件. 如下图:</p>
       <img src="/myimages/5.jpg" height="180" width="260"/>
@@ -69,7 +66,6 @@
 </div>
 
 <div class="tab-pane fade" id="mac">
-  <p><strong>MAC客户端设置</strong></p>
   <p>1. 点击安装下载下来的ShadowsocksX-2.6.2-2.dmg文件.</p>
   <p>2.配置</p>
   <p>2(1). 通过扫描二维码完成客户端配置. </p>
@@ -96,7 +92,6 @@
 </div>
 
 <div class="tab-pane fade" id="andriod">
-  <p><strong>Android客户端设置</strong></p>
   <p>1. 下载并在手机上安装shadowsocks-nightly-2.9.11 包</p>
   <p>2. 手动填写完成客户端配置</p>
   <p>首先登录本站进入<a href="/user">用户中心</a>, 再点击进入左侧单行栏的的节点列表, 这时你可以看到每台机器的节点地址 连接端口 加密方式. 密码请返回<a href="/user">用户中心</a>,在连接信息可以看到. 现在编辑客户端服务器配置, 如下图:</p>
@@ -106,10 +101,7 @@
   <p>在弹出的对话框中选择信任应用程序, 之后会看到连接成功的提示.</p>
 </div>
 
-
-
 <div class="tab-pane fade" id="linux">
-  <p><strong>Linux客户端设置</strong></p>
   <p>相信在linux下使用本服务的一定是技术工作者了, 所以这里的说明就略微专业一些. 这里只提供最通用的方法, 同时还给出了其他的一些建议, 大家可以研究一下.</p>
   <p>在linux下使用本服务需要两个步骤.首先要在本地的某个端口启动shadowsocks的客户端服务, 然后还要把网络请求转到在本地启动的这个客户端服务</p>
   <ol>
@@ -177,8 +169,6 @@
 </div>
 
 <div class="tab-pane fade" id="ios">
-  <p id="client-ios"></p>
-  <p><strong>设置iOS</strong></p>
   <p>iOS客户端推荐使用shadowrocket, 这个app是需要花6元人民币购买的. 这里郑重声明, 本站和这个app没有任何利益关系, 也没有推广这个app的意思, 是否购买由您自己决定. 因为本站的技术水平有限, 没有能力开发iOS下的app, 只能推荐大家用这个app做客户端. 目前这个app是ios平台下性价比最高的客户端了.</p>
   <p>1. 在appstore搜索shadowrocket, 就可以看到这个app了, 如下图.  点击购买并完成安装.</p>
   <img src="/myimages/ios1.png" height="460" width="260"/>
