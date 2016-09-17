@@ -4,7 +4,6 @@
     <section class="content-header">
         <h1>
             我的信息
-            <small>User Profile</small>
         </h1>
     </section>
     <!-- Main content --><!-- Main content -->

@@ -5,7 +5,6 @@
     <section class="content-header">
         <h1>
             修改资料
-            <small>Profile Edit</small>
         </h1>
     </section>
 
@@ -111,11 +110,12 @@
                                 <label class="col-sm-3 control-label">加密方式</label>
 
                                 <div class="col-sm-7">
-                                    <input type="text" id="method" placeholder="输入新加密方式" class="form-control">
+                                  <!--input type="text" id="method" placeholder="输入新加密方式" class="form-control"-->
+                                  <input type="text" id="method" placeholder="默认只支持rc4-md5,禁止修改" class="form-control">
                                 </div>
-                                <div clss="col-sm-2">
+                                <!--div clss="col-sm-2">
                                     <button type="submit" id="method-update" class="btn btn-primary">修改</button>
-                                </div>
+                                </div-->
                             </div>
 
                         </div>

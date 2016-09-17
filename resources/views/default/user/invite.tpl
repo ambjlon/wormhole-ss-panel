@@ -6,7 +6,6 @@
     <section class="content-header">
         <h1>
             邀请
-            <small>Invite</small>
         </h1>
     </section>
 

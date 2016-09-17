@@ -6,7 +6,6 @@
     <section class="content-header">
         <h1>
             节点列表
-            <small>Node List</small>
         </h1>
     </section>
 

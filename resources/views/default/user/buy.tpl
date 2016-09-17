@@ -1,7 +1,7 @@
 {include file='user/main.tpl'}
 <div class="content-wrapper">
   <section class="content-header">
-    <h1> 购买</h1>
+    <h1> 购买服务</h1>
   </section>
   <section class="content">
     <h4>收费标准:</h4>
