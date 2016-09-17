@@ -34,7 +34,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <p>当前您可以生成<code>{$user->invite_num}</code>个邀请码。 </p>
+                        <p>当前您可以生成<code>{$user->invite_num}</code>个邀请码。</p>
                         {if $user->invite_num }
                             <button id="invite" class="btn btn-sm btn-info">生成我的邀请码</button>
                         {/if}
@@ -79,6 +79,8 @@
 
                 <div class="callout callout-info">
                     <h4>说明</h4>
+
+                    <p>推荐一个付费用户可获得一个月的服务奖励.</p>
 
                     <p>用户注册48小时后，才可以生成邀请码。</p>
 
