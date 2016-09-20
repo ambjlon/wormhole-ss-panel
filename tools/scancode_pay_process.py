@@ -8,7 +8,7 @@ import MySQLdb
 
 cntz = pytz.timezone('Asia/Shanghai')
 today = datetime.now(cntz).strftime('%Y%m%d')
-db = MySQLdb.connect(host="localhost", user="root", passwd="", port=3306, db="shadowsocks")
+db = MySQLdb.connect(host="localhost", user="root", passwd="", port=3306, db="shadowsocks", charset="utf8")
 cursor = db.cursor()
 
 def write_pay_log(uid, purchase_time, amount, pay_type, pay_way):
@@ -28,6 +28,7 @@ def reward_ref(ref_by):
     	log = cursor.fetchone()
         print "Execute sql: [" + sql + "]"
         if log is None:
+            print "Referee is none and ref_by id is " + str(ref_by)
             return
         pay_status = int(log[0])
         service_deadline = log[1]
