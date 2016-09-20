@@ -86,7 +86,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <p> 每{$config['checkinTime']}小时可以签到一次。</p>
-
+                        <p><font color="#FF0000">为了保持和本站的联系, 防止本站域名被封, 强烈建议你加入qq群431706930</font></p>
                         <p>上次签到时间：<code>{$user->lastCheckInTime()}</code></p>
                         {if $user->isAbleToCheckin() }
                             <p id="checkin-btn">
