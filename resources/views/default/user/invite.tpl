@@ -48,7 +48,7 @@
                             <thead>
                             <tr>
                                 <th>###</th>
-                                <th>邀请码(点右键复制链接)</th>
+                                <th>邀请码</th>
                                 <th>状态</th>
                             </tr>
                             </thead>
