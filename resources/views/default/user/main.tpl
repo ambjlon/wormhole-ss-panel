@@ -31,7 +31,8 @@
 <div class="wrapper">
 
     <header class="main-header">
-        <a href="/" class="logo">{$config["appName"]}</a>
+      <!--a href="/" class="logo">{$config["appName"]}</a-->
+       <a href="/"><i class="fa fa-book"></i>{$config["appName"]}首页</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
