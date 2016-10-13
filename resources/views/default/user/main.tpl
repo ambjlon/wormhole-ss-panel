@@ -102,6 +102,12 @@
                 </li>
 
                 <li>
+                    <a href="/usage">
+                        <i class="fa fa-book"></i> <span>使用教程</span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="/user/buy">
                         <i class="fa fa-money"></i> <span>购买服务</span>
                     </a>
