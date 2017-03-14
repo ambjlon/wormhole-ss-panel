@@ -10,7 +10,8 @@
   <p><strong>客户端下载</strong></p>
   <ul>
     <li><a href="/download/Shadowsocks-win-2.5.2.zip">Windows 7</a></li>
-    <li><a href="/download/Shadowsocks-win-dotnet4.0-2.5.2.zip">Windows 8及以上</a></li>
+    <!--li><a href="/download/Shadowsocks-win-dotnet4.0-2.5.2.zip">Windows 8及以上</a></li-->
+    <li><a href="/download/Shadowsocks.exe">Windows 8及以上</a></li>
     <li><a href="/download/ShadowsocksX-2.6.2.dmg">Mac</a></li>
     <!-- <a href="/download/shadowsocks-local-linux32" class="btn btn-success btn-sm">Linux-32bit</a> &nbsp; -->
     <!-- <a href="/download/shadowsocks-local-linux64" class="btn btn-success btn-sm">Linux-64bit</a> &nbsp; -->
