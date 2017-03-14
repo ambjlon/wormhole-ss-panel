@@ -78,7 +78,7 @@
     <div class="tab-pane fade in active" id="wxyuan6"><img src="/myimages/weixin6.jpg" height="422" width="320"/></div>
     <div class="tab-pane fade" id="wxyuan30"><img src="/myimages/weixin30.jpg" height="422" width="320"/></div>
     <div class="tab-pane fade" id="wxyuan45"><img src="/myimages/weixin45.jpg" height="422" width="320"/></div>
-    <div class="tab-pane fade" id="wxyuan8"><img src="/myimages/weixin8.jpg" height="422" width="320"/></div>
+    <div class="tab-pane fade" id="wxyuan8"><img src="/myimages/weixin8.png" height="422" width="320"/></div>
   </div>
             <p>支付宝扫码</p>
   <ul id="myTab2" class="nav nav-tabs">
