@@ -34,7 +34,8 @@ def process_log(log):
             log_file.write("Error: user " +str(uid) + "anomaly detection: service expire out, update mysql error.\n")
         return
     if (next_deadline_time.date() - nowtime.date()).days < 0:
-        next_deadline_time = var_time + timedelta(days=30)
+        while (next_deadline_time.date() - nowtime.date()).days <= 0:
+            next_deadline_time = next_deadline_time + timedelta(days=30)
 	next_deadline_time_string =  next_deadline_time.strftime("%Y-%m-%d %H:%M:%S")
         sql = "update user set u=0,d=0,transfer_enable=53687091200,next_service_deadline='" + next_deadline_time_string + "' where id=" + str(uid)
         try:
